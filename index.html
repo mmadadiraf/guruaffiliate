@@ -7,210 +7,164 @@
 <meta name="description" content="Kursus affiliate Shopee gratis terstruktur dari nol. Belajar affiliate marketing tanpa modal, tanpa video. Strategi text-only terbukti 57 juta dari @rizalilmucuann.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://guruaffiliate.vercel.app/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://guruaffiliate.vercel.app/">
 <meta property="og:title" content="Guru Affiliate — Portal & Kursus Affiliate Shopee Indonesia">
 <meta property="og:description" content="Kursus affiliate Shopee gratis terstruktur dari nol. Tanpa modal, tanpa video. Strategi text-only terbukti 57 juta.">
 <meta property="og:image" content="https://picsum.photos/seed/guruaffiliate-og/1200/630">
 <meta property="og:locale" content="id_ID">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Guru Affiliate — Portal & Kursus Affiliate Shopee">
 <meta name="twitter:description" content="Kursus affiliate Shopee gratis terstruktur dari nol. Strategi text-only terbukti 57 juta dari praktisi.">
 <meta name="twitter:image" content="https://picsum.photos/seed/guruaffiliate-og/1200/630">
-
-<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Guru Affiliate",
-  "url": "https://guruaffiliate.vercel.app/",
-  "description": "Portal affiliate Indonesia - kursus gratis & artikel strategi dari praktisi",
-  "inLanguage": "id-ID",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://guruaffiliate.vercel.app/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
+{"@context":"https://schema.org","@type":"WebSite","name":"Guru Affiliate","url":"https://guruaffiliate.vercel.app/","description":"Portal affiliate Indonesia - kursus gratis & artikel strategi dari praktisi","inLanguage":"id-ID"}
 </script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#09090b;--card:#111114;--card-alt:#1a1a1f;--border:rgba(255,255,255,0.06);
-    --fg:#e4e4e7;--fg-muted:#a1a1aa;--fg-dim:#71717a;--accent:#10b981;--accent2:#a78bfa;
-    --accent3:#0ea5e9;--accent4:#f59e0b;--font:'Inter',-apple-system,sans-serif;--radius:16px;--radius-sm:10px;--radius-xs:6px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:var(--font);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.7}
-  .container{max-width:960px;margin:0 auto;padding:0 20px}
-
-  .nav{padding:14px 0;border-bottom:1px solid var(--border);background:rgba(9,9,11,0.85);backdrop-filter:blur(14px);position:sticky;top:0;z-index:100}
-  .nav-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-  .logo{font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--fg);letter-spacing:-0.02em}
-  .logo svg{width:22px;height:22px;color:var(--accent)}
-  .logo span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .nav-links{display:flex;gap:6px;font-size:.82rem;flex-wrap:wrap}
-  .nav-links a{color:var(--fg-muted);text-decoration:none;transition:all .2s;padding:6px 14px;border-radius:20px}
-  .nav-links a:hover{color:var(--fg);background:var(--card)}
-  .nav-links .active{color:var(--fg);background:rgba(16,185,129,0.1)}
-
-  .hero{text-align:center;padding:60px 20px 48px}
-  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 14px;font-size:.7rem;color:var(--accent);font-weight:500;margin-bottom:20px}
-  .hero h1{font-size:2.6rem;font-weight:900;letter-spacing:-0.04em;line-height:1.1}
-  .hero h1 span{background:linear-gradient(135deg,#f4f4f5 0%,#a1a1aa 50%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .hero p{color:var(--fg-muted);font-size:1rem;margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
-
-  .cta-row{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
-  .cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .2s}
-  .cta svg{width:18px;height:18px}
-  .cta.primary{background:var(--accent);color:#fff}
-  .cta.primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,0.25)}
-  .cta.secondary{background:var(--card);border:1px solid var(--border);color:var(--fg)}
-  .cta.secondary:hover{background:var(--card-alt)}
-
-  .section-title{font-size:1.2rem;font-weight:700;margin:36px 0 18px;display:flex;align-items:center;gap:10px}
-  .section-title .line{flex:1;height:1px;background:var(--border)}
-  .section-title svg{width:22px;height:22px;color:var(--accent);flex-shrink:0}
-
-  .card-grid{display:grid;gap:14px;margin-bottom:36px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .25s;text-decoration:none;color:inherit;display:block}
-  .card:hover{border-color:rgba(16,185,129,0.2);transform:translateY(-2px)}
-  .card-cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:5px}
-  .card-cat svg{width:13px;height:13px}
-  .card h3{font-size:.95rem;font-weight:600;margin-bottom:6px;line-height:1.4}
-  .card p{font-size:.8rem;color:var(--fg-muted);line-height:1.6}
-  .card-meta{display:flex;gap:12px;margin-top:10px;font-size:.68rem;color:var(--fg-dim)}
-  .card-meta span{display:flex;align-items:center;gap:4px}
-
-  .about{padding:36px 0;border-top:1px solid var(--border);text-align:center}
-  .about h2{font-size:1.1rem;font-weight:700;margin-bottom:10px}
-  .about p{color:var(--fg-muted);font-size:.85rem;max-width:500px;margin:0 auto 12px}
-
-  .footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);font-size:.72rem;color:var(--fg-dim)}
-  .footer strong{color:var(--fg-muted)}
-
-  @media(min-width:768px){
-    .hero h1{font-size:3.5rem}
-    .card-grid{grid-template-columns:1fr 1fr}
-  }
+:root{--bg:#09090b;--card:#111114;--card-alt:#1a1a1f;--border:rgba(255,255,255,0.06);--fg:#e4e4e7;--fg-muted:#a1a1aa;--fg-dim:#71717a;--accent:#10b981;--accent2:#a78bfa;--accent3:#0ea5e9;--accent4:#f59e0b;--font:'Inter',-apple-system,sans-serif;--radius:16px;--radius-sm:10px;--radius-xs:6px;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+.nav{padding:14px 0;border-bottom:1px solid var(--border);background:rgba(9,9,11,0.85);backdrop-filter:blur(14px);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--fg);letter-spacing:-0.02em}
+.logo svg{width:22px;height:22px;color:var(--accent)}
+.logo span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:6px;font-size:.82rem;flex-wrap:wrap}
+.nav-links a{color:var(--fg-muted);text-decoration:none;transition:all .2s;padding:6px 14px;border-radius:20px}
+.nav-links a:hover{color:var(--fg);background:var(--card)}
+.nav-links .active{color:var(--fg);background:rgba(16,185,129,0.1)}
+.hero{text-align:center;padding:60px 20px 48px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 14px;font-size:.7rem;color:var(--accent);font-weight:500;margin-bottom:20px}
+.hero h1{font-size:2.6rem;font-weight:900;letter-spacing:-0.04em;line-height:1.1}
+.hero h1 span{background:linear-gradient(135deg,#f4f4f5 0%,#a1a1aa 50%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--fg-muted);font-size:1rem;margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-row{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .2s}
+.cta svg{width:18px;height:18px}
+.cta.primary{background:var(--accent);color:#fff}
+.cta.primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,0.25)}
+.cta.secondary{background:var(--card);border:1px solid var(--border);color:var(--fg)}
+.cta.secondary:hover{background:var(--card-alt)}
+.section-title{font-size:1.2rem;font-weight:700;margin:36px 0 18px;display:flex;align-items:center;gap:10px}
+.section-title .line{flex:1;height:1px;background:var(--border)}
+.section-title svg{width:22px;height:22px;color:var(--accent);flex-shrink:0}
+.card-grid{display:grid;gap:14px;margin-bottom:36px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .25s;text-decoration:none;color:inherit;display:block}
+.card:hover{border-color:rgba(16,185,129,0.2);transform:translateY(-2px)}
+.card-cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.card-cat svg{width:13px;height:13px}
+.card h3{font-size:.95rem;font-weight:600;margin-bottom:6px;line-height:1.4}
+.card p{font-size:.8rem;color:var(--fg-muted);line-height:1.6}
+.card-meta{display:flex;gap:12px;margin-top:10px;font-size:.68rem;color:var(--fg-dim)}
+.card-meta span{display:flex;align-items:center;gap:4px}
+.card-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:.65rem;font-weight:500;margin-bottom:10px}
+.card-tag.premium{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);color:var(--accent4)}
+.card-tag.auto{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);color:var(--accent)}
+.card-tag.course{background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.2);color:var(--accent2)}
+.about{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:40px}
+.about h2{font-size:1.1rem;font-weight:700;margin-bottom:12px}
+.about p{color:var(--fg-muted);font-size:.85rem;line-height:1.7;margin-bottom:10px}
+.about p:last-child{margin-bottom:0}
+.footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);margin-top:40px;font-size:.75rem;color:var(--fg-dim)}
+.footer strong{color:var(--fg-muted)}
+main{padding-bottom:60px}
+@media(min-width:768px){.card-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-
-<div class="nav">
+<nav class="nav">
   <div class="container nav-inner">
-    <a href="/" class="logo" aria-label="Guru Affiliate Beranda">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+    <a href="/" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
       <span>Guru Affiliate</span>
     </a>
-    <nav class="nav-links" aria-label="Navigasi utama">
-      <a href="/" class="active" aria-current="page">Beranda</a>
-      <a href="/kursus">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;vertical-align:middle;margin-right:4px" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        Kursus
-      </a>
-      <a href="/artikel">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;vertical-align:middle;margin-right:4px" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Artikel
-      </a>
-    </nav>
+    <div class="nav-links">
+      <a href="/" class="active">Beranda</a>
+      <a href="/kursus">Kursus</a>
+      <a href="/artikel">Artikel</a>
+    </div>
   </div>
-</div>
+</nav>
 
 <main>
-  <section class="hero">
-    <div class="hero-badge">🔥 Sekolah Affiliate Shopee #1</div>
-    <h1><span>Dari Nol Jadi</span><br>Cuan Affiliate Shopee</h1>
-    <p>Kursus gratis terstruktur — dari mindset sampai scaling. Tanpa video, tanpa live, cukup modal cerita dan strategi yang tepat. Terbukti 57 juta dari text-only.</p>
-    <div class="cta-row">
-      <a href="/kursus" class="cta primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        Mulai Belajar
-      </a>
-      <a href="/artikel" class="cta secondary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        Baca Artikel
-      </a>
-    </div>
-  </section>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-badge">🔥 Sekolah Affiliate Shopee #1</div>
+      <h1>Gue Ajak Lo <span>Bikin Duit dari Rumah</span></h1>
+      <p>Kursus affiliate Shopee gratis. Gak perlu modal, gak perlu jadi content creator. Cukup konsisten ngulang pola yang bener.</p>
+      <div class="cta-row">
+        <a href="/kursus" class="cta primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+          Mulai Kursus
+        </a>
+        <a href="/artikel" class="cta secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Baca Artikel
+        </a>
+      </div>
+    </section>
 
-  <section class="container">
+    <!-- Modul Kursus -->
     <h2 class="section-title">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-      <span>Kursus — 8 Modul</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+      <span>Modul Kursus</span>
       <span class="line"></span>
     </h2>
-
     <div class="card-grid">
-      <a href="/kursus/modul-1" class="card">
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Modul 1
-        </div>
-        <h3>Mindset & Fundamental</h3>
-        <p>Apa itu affiliate, bedanya sama reseller, dan 3 mindset yang bikin lo bertahan dari 90% affiliator yang menyerah.</p>
+      <div class="card">
         <div class="card-meta"><span>✅ Selesai</span></div>
-      </a>
-      <a class="card" style="opacity:0.5;cursor:default" aria-disabled="true">
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> Modul 2
-        </div>
+        <h3>Mindset & Fundamental</h3>
+        <p>Lo gak bakal kaya instan. Tapi lo bisa mulai dari nol — dan konsisten sampe titik aman.</p>
+      </div>
+      <div class="card">
+        <div class="card-meta"><span>🔄 Segera</span></div>
         <h3>Riset Produk & Pasar</h3>
-        <p>Cara nemuin produk yang laku, tren naik, dan komisi gede — tanpa nebak-nebak.</p>
+        <p>Cara nemuin produk yang laku tanpa ikut-ikutan tren sesaat.</p>
+      </div>
+      <div class="card">
         <div class="card-meta"><span>🔄 Segera</span></div>
-      </a>
-      <a class="card" style="opacity:0.5;cursor:default" aria-disabled="true">
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Modul 3
-        </div>
         <h3>Copywriting & Storytelling</h3>
-        <p>Pola "dari umum ke spesifik" yang bikin orang percaya duluan sebelum lo kasih link.</p>
+        <p>Text-only yang bikin orang click dan checkout. Tanpa harus keliatan di kamera.</p>
+      </div>
+      <div class="card">
         <div class="card-meta"><span>🔄 Segera</span></div>
-      </a>
-      <a class="card" style="opacity:0.5;cursor:default" aria-disabled="true">
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg> Modul 4
-        </div>
         <h3>Visual & AI untuk Konten</h3>
-        <p>Prompt rahasia biar gambar AI lo gak keliatan kayak patung lilin.</p>
-        <div class="card-meta"><span>🔄 Segera</span></div>
-      </a>
+        <p>Bikin thumbnail dan visual menarik pake AI — gak perlu skill desain.</p>
+      </div>
     </div>
 
+    <!-- Artikel Premium -->
     <h2 class="section-title">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-      <span>Artikel Terbaru</span>
+      <span>Artikel Premium</span>
       <span class="line"></span>
+      <a href="/artikel" style="font-size:.75rem;color:var(--fg-muted);text-decoration:none;font-weight:400;flex-shrink:0">Lihat semua →</a>
     </h2>
-
     <div class="card-grid">
-      <a href="/premium/konten-affiliate-57juta" class="card">
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Strategi
-        </div>
+      <a href="/premium/affiliate-57juta" class="card">
+        <div class="card-tag premium">⭐ Premium</div>
         <h3>57 Juta dari Text-Only: Modal Cerita, Bukan Kamera</h3>
         <p>Gak main video, gak main live — cuma ngulang 1 pola yang sama selama 4 bulan.</p>
         <div class="card-meta"><span>📅 26 Jul 2026</span><span>👤 @rizalilmucuann</span></div>
       </a>
-      <a href="/premium/konten-nomor-hp-bocor" class="card">
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Privacy
-        </div>
+      <a href="/premium/gimana-cara-dapet-57-juta-cuma-dari-text-pola-ini-dibongkar" class="card">
+        <div class="card-tag premium">⭐ Premium</div>
+        <h3>Gimana Cara Dapet 57 Juta Cuma dari Text? Pola Ini Dibongkar Semua!</h3>
+        <p>Full breakdown pola 57 juta — dari mindset sampe struktur konten yang diulang.</p>
+        <div class="card-meta"><span>📅 26 Jul 2026</span><span>👤 @rizalilmucuann</span></div>
+      </a>
+      <a href="/premium/nomor-hp-bocor" class="card">
+        <div class="card-tag premium">⭐ Premium</div>
         <h3>Nomor HP Bocor? Mutus Jejak Digital</h3>
         <p>Tiba-tiba ditelpon pinjol? Ini cara proteksi diri dari kebocoran data.</p>
         <div class="card-meta"><span>📅 26 Jul 2026</span><span>👤 @tipsgaptek</span></div>
       </a>
-      <a href="/premium/konten-google-hacks" class="card">
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Tutorial
-        </div>
+      <a href="/premium/google-hacks" class="card">
+        <div class="card-tag premium">⭐ Premium</div>
         <h3>Google Hacks: Dapetin File Asli Gratis</h3>
         <p>PDF, Excel, Word yang biasa dijual 30-50rb ternyata bisa didapetin gratis.</p>
         <div class="card-meta"><span>📅 26 Jul 2026</span><span>👤 @tipsgaptek</span></div>
@@ -222,12 +176,11 @@
       <p>Kami menyediakan kursus affiliate Shopee gratis & terstruktur, plus kumpulan artikel strategi dari para praktisi. Semua konten disusun ulang dengan insight tambahan agar langsung bisa dipraktekkan.</p>
       <p style="font-size:.78rem;color:var(--fg-dim)">Dikurasi oleh <strong>SOUL Agent</strong> · 2026</p>
     </section>
-  </section>
+  </div>
 </main>
 
 <footer class="footer">
   <p><strong>Guru Affiliate</strong> — Sekolah Affiliate Shopee Indonesia · 2026</p>
 </footer>
-
 </body>
 </html>
