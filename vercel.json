@@ -1,0 +1,35 @@
+{
+  "buildCommand": "python3 _build.py",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/artikel/:slug",
+      "destination": "/artikel/:slug/index.html"
+    },
+    {
+      "source": "/artikel/:slug/",
+      "destination": "/artikel/:slug/index.html"
+    },
+    {
+      "source": "/kursus/:slug",
+      "destination": "/kursus/:slug/index.html"
+    },
+    {
+      "source": "/kursus/:slug/",
+      "destination": "/kursus/:slug/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
