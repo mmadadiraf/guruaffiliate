@@ -1,49 +1,17 @@
 {
   "rewrites": [
-    {
-      "source": "/artikel",
-      "destination": "/api/artikel.js"
-    },
-    {
-      "source": "/artikel/",
-      "destination": "/api/artikel.js"
-    },
-    {
-      "source": "/artikel/:slug",
-      "destination": "/api/artikel.js?slug=:slug"
-    },
-    {
-      "source": "/artikel/:slug/",
-      "destination": "/api/artikel.js?slug=:slug"
-    },
-    {
-      "source": "/premium/:file",
-      "destination": "/premium/:file.html"
-    },
-    {
-      "source": "/premium/:file/",
-      "destination": "/premium/:file.html"
-    },
-    {
-      "source": "/kursus/:slug",
-      "destination": "/kursus/:slug/index.html"
-    },
-    {
-      "source": "/kursus/:slug/",
-      "destination": "/kursus/:slug/index.html"
-    }
+    { "source": "/artikel", "destination": "/api/artikel.js" },
+    { "source": "/artikel/", "destination": "/api/artikel.js" },
+    { "source": "/artikel/:slug", "destination": "/api/artikel.js?slug=:slug" },
+    { "source": "/artikel/:slug/", "destination": "/api/artikel.js?slug=:slug" },
+    { "source": "/premium/:file", "destination": "/premium/:file.html" },
+    { "source": "/premium/:file/", "destination": "/premium/:file.html" },
+    { "source": "/kursus/:slug", "destination": "/kursus/:slug/index.html" },
+    { "source": "/kursus/:slug/", "destination": "/kursus/:slug/index.html" }
   ],
   "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    }
+    { "source": "/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }] }
   ]
 }

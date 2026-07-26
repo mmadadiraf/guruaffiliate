@@ -95,8 +95,8 @@ function renderHTML(article) {
 
 function renderList(articles) {
   let cards = articles.map(a => {
-    const cat = a.article_type === "premium" ? "⭐ Premium" : "🤖 Auto";
-    const link = a.article_type === "premium" ? `/premium/konten-${a.slug}` : `/artikel/${a.slug}`;
+    const cat = a.article_type === "course" ? "📚 Course" : "🤖 Auto";
+    const link = `/artikel/${a.slug}`;
     const date = a.created_at ? new Date(a.created_at).toISOString().slice(0, 10).split('-').reverse().join('/') : '-';
     return `<a href="${link}" class="card">
       <div class="card-cat">${cat}</div>
@@ -146,7 +146,7 @@ function renderList(articles) {
     <div class="nav-links"><a href="/">Beranda</a><a href="/kursus">Kursus</a><a href="/artikel" class="active">Artikel</a></div></div></nav>
     <div class="container">
     <div class="page-header"><h1>📚 <span>Artikel</span></h1><p>Kumpulan strategi, trik, dan insight dari affiliate marketer Indonesia</p></div>
-    <div class="card-grid">${cards}</div>
+    <div class="card-grid">${cards || '<p style="color:#71717a;text-align:center;padding:40px 0">Belum ada artikel. Cek lagi nanti ya! 👋</p>'}</div>
     </div>
     <footer class="footer"><p><strong>Guru Affiliate</strong> — Artikel · 2026</p></footer>
     </body></html>`;
@@ -172,14 +172,19 @@ module.exports = async (req, res) => {
           .setHeader('Content-Type', 'text/html; charset=utf-8')
           .send('<h1>404 — Artikel tidak ditemukan</h1><a href="/artikel">← Kembali</a>');
       }
+      const article = result.rows[0];
+      if (article.article_type === 'premium') {
+        return res.redirect(302, `/premium/${article.slug}`);
+      }
       return res
         .setHeader('Content-Type', 'text/html; charset=utf-8')
         .setHeader('Cache-Control', 'public, max-age=0, must-revalidate')
         .send(renderHTML(result.rows[0]));
     }
 
+    // Listing: exclude premium (served as static) & course
     const result = await client.query(
-      `SELECT * FROM articles WHERE status = 'published' ORDER BY created_at DESC LIMIT 50`
+      `SELECT * FROM articles WHERE status = 'published' AND article_type NOT IN ('premium', 'course') ORDER BY created_at DESC LIMIT 50`
     );
     return res
       .setHeader('Content-Type', 'text/html; charset=utf-8')
