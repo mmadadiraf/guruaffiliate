@@ -25,7 +25,7 @@
       "destination": "/kursus/:slug/index.html"
     }
   ],
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
     {
