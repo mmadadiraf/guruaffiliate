@@ -94,12 +94,16 @@ function renderHTML(article) {
 }
 
 function renderList(articles) {
+  let cardTag = '';
   let cards = articles.map(a => {
-    const cat = a.article_type === "course" ? "📚 Course" : "🤖 Auto";
-    const link = `/artikel/${a.slug}`;
-    const date = a.created_at ? new Date(a.created_at).toISOString().slice(0, 10).split('-').reverse().join('/') : '-';
+    const type = a.article_type;
+    let tag, link;
+    if (type === 'premium') { tag = '⭐ Premium'; link = `/premium/${a.slug}`; }
+    else if (type === 'course') { tag = '📚 Course'; link = `/kursus/${a.slug}`; }
+    else { tag = '🤖 Auto'; link = `/artikel/${a.slug}`; }
+    const date = a.created_at ? new Date(a.created_at).toISOString().slice(0,10).split('-').reverse().join('/') : '-';
     return `<a href="${link}" class="card">
-      <div class="card-cat">${cat}</div>
+      <div class="card-tag ${type}">${tag}</div>
       <h3>${a.title}</h3>
       <div class="card-meta"><span>📅 ${date}</span><span>👤 @${a.source_account}</span></div>
     </a>`;
@@ -137,6 +141,10 @@ function renderList(articles) {
     .card-cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:600;margin-bottom:8px}
     .card h3{font-size:.95rem;font-weight:600;margin-bottom:6px;line-height:1.4}
     .card-meta{display:flex;gap:12px;margin-top:10px;font-size:.68rem;color:var(--fg-dim)}
+    .card-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:.65rem;font-weight:500;margin-bottom:10px}
+    .card-tag.premium{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);color:#f59e0b}
+    .card-tag.auto{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);color:#10b981}
+    .card-tag.course{background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.2);color:#a78bfa}
     .footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);font-size:.72rem;color:var(--fg-dim)}
     .footer strong{color:var(--fg-muted)}
     @media(min-width:768px){.card-grid{grid-template-columns:1fr 1fr}}
@@ -184,7 +192,7 @@ module.exports = async (req, res) => {
 
     // Listing: exclude premium (served as static) & course
     const result = await client.query(
-      `SELECT * FROM articles WHERE status = 'published' AND article_type NOT IN ('premium', 'course') ORDER BY created_at DESC LIMIT 50`
+      `SELECT * FROM articles WHERE status = 'published' ORDER BY created_at DESC LIMIT 50`
     );
     return res
       .setHeader('Content-Type', 'text/html; charset=utf-8')
