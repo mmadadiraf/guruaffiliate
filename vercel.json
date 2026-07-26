@@ -1,20 +1,20 @@
 {
   "rewrites": [
     {
-      "source": "/api/artikel",
+      "source": "/artikel",
       "destination": "/api/artikel.js"
     },
     {
-      "source": "/api/artikel/:slug",
+      "source": "/artikel/",
       "destination": "/api/artikel.js"
     },
     {
       "source": "/artikel/:slug",
-      "destination": "/artikel/_template.html"
+      "destination": "/api/artikel.js?slug=:slug"
     },
     {
       "source": "/artikel/:slug/",
-      "destination": "/artikel/_template.html"
+      "destination": "/api/artikel.js?slug=:slug"
     },
     {
       "source": "/kursus/:slug",
