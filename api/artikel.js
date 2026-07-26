@@ -95,9 +95,10 @@ function renderHTML(article) {
 
 function renderList(articles) {
   let cards = articles.map(a => {
-    const cat = a.article_type === 'premium' ? '⭐ Premium' : '🤖 Auto';
+    const cat = a.article_type === "premium" ? "⭐ Premium" : "🤖 Auto";
+    const link = a.article_type === "premium" ? `/premium/konten-${a.slug}` : `/artikel/${a.slug}`;
     const date = a.created_at ? new Date(a.created_at).toISOString().slice(0, 10).split('-').reverse().join('/') : '-';
-    return `<a href="/artikel/${a.slug}" class="card">
+    return `<a href="${link}" class="card">
       <div class="card-cat">${cat}</div>
       <h3>${a.title}</h3>
       <div class="card-meta"><span>📅 ${date}</span><span>👤 @${a.source_account}</span></div>

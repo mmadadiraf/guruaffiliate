@@ -17,6 +17,14 @@
       "destination": "/api/artikel.js?slug=:slug"
     },
     {
+      "source": "/premium/:file",
+      "destination": "/premium/:file.html"
+    },
+    {
+      "source": "/premium/:file/",
+      "destination": "/premium/:file.html"
+    },
+    {
       "source": "/kursus/:slug",
       "destination": "/kursus/:slug/index.html"
     },
