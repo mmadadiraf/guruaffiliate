@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Modul 1: Mindset & Fundamental — Guru Affiliate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#09090b;--card:#111114;--card-alt:#1a1a1f;--border:rgba(255,255,255,0.06);
+    --border-light:rgba(255,255,255,0.1);--fg:#e4e4e7;--fg-muted:#a1a1aa;--fg-dim:#71717a;
+    --accent:#10b981;--accent2:#a78bfa;--accent3:#0ea5e9;--accent4:#f59e0b;
+    --font:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;
+    --radius:16px;--radius-sm:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font);background:var(--bg);color:var(--fg);padding:0;min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.8}
+  .container{max-width:768px;margin:0 auto;padding:0 20px}
+
+  /* NAV */
+  .nav{padding:16px 0;border-bottom:1px solid var(--border);background:rgba(9,9,11,0.8);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--fg)}
+  .logo span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .nav-links{display:flex;gap:16px;font-size:.85rem;flex-wrap:wrap}
+  .nav-links a{color:var(--fg-muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--fg)}
+  .nav-links .active{color:var(--accent)}
+
+  /* header */
+  .modul-header{padding:40px 0 24px}
+  .modul-breadcrumb{font-size:.75rem;color:var(--fg-dim);margin-bottom:12px}
+  .modul-breadcrumb a{color:var(--fg-dim);text-decoration:none}
+  .modul-breadcrumb a:hover{color:var(--fg-muted)}
+  .modul-breadcrumb span{color:var(--fg-muted)}
+  .modul-header .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 14px;font-size:.65rem;color:var(--accent);font-weight:500;margin-bottom:16px}
+  .modul-header h1{font-size:2rem;font-weight:800;letter-spacing:-0.03em;line-height:1.2}
+  .modul-header h1 span{background:linear-gradient(135deg,#f4f4f5,#a1a1aa,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .modul-header .sub{color:var(--fg-muted);font-size:.95rem;margin-top:12px}
+  .modul-header .meta{display:flex;gap:16px;margin-top:16px;font-size:.75rem;color:var(--fg-dim);flex-wrap:wrap}
+  .modul-header .meta span{display:flex;align-items:center;gap:4px}
+
+  /* section */
+  .section{padding:28px 0;border-bottom:1px solid var(--border)}
+  .section:last-of-type{border-bottom:none}
+  .section-title{font-size:1.2rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .section-title .emoji{font-size:1.2rem}
+  .section p{color:var(--fg-muted);font-size:.9rem;margin-bottom:12px}
+  .section p:last-child{margin-bottom:0}
+  .section p strong{color:var(--fg)}
+  .section ul, .section ol{margin:12px 0 12px 20px;font-size:.9rem;color:var(--fg-muted)}
+  .section ul li, .section ol li{margin-bottom:8px}
+  .section ul li strong, .section ol li strong{color:var(--fg)}
+
+  /* box */
+  .tip-box{background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.12);border-radius:var(--radius-sm);padding:18px 20px;margin:16px 0;display:flex;gap:12px;align-items:flex-start}
+  .tip-box .icon{font-size:1.2rem;flex-shrink:0;margin-top:2px}
+  .tip-box p{color:var(--fg-muted);font-size:.85rem;margin:0}
+  .tip-box p strong{color:var(--accent)}
+
+  .warn-box{background:rgba(245,158,11,0.04);border:1px solid rgba(245,158,11,0.12);border-radius:var(--radius-sm);padding:18px 20px;margin:16px 0;display:flex;gap:12px;align-items:flex-start}
+  .warn-box .icon{font-size:1.2rem;flex-shrink:0;margin-top:2px}
+  .warn-box p{color:var(--fg-muted);font-size:.85rem;margin:0}
+  .warn-box p strong{color:var(--accent4)}
+
+  .insight{background:linear-gradient(135deg,rgba(167,139,250,0.06),rgba(16,185,129,0.04));border:1px solid rgba(167,139,250,0.12);border-radius:var(--radius-sm);padding:20px 24px;margin:16px 0}
+  .insight-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent2);font-weight:600;margin-bottom:8px}
+  .insight p{color:var(--fg-muted);font-size:.85rem;margin:0;line-height:1.8}
+  .insight p strong{color:var(--fg)}
+
+  .image-wrap{margin:20px 0;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border);background:var(--card)}
+  .image-wrap img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  .image-caption{padding:10px 16px;font-size:.75rem;color:var(--fg-dim);text-align:center;font-style:italic;border-top:1px solid var(--border)}
+
+  /* tugas */
+  .tugas-box{background:var(--card);border:2px solid var(--accent4);border-radius:var(--radius);padding:24px;margin:20px 0}
+  .tugas-box .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent4);font-weight:600;margin-bottom:12px}
+  .tugas-box h4{font-size:1rem;font-weight:600;margin-bottom:8px}
+  .tugas-box p{font-size:.85rem;color:var(--fg-muted);margin-bottom:8px}
+  .tugas-box p:last-child{margin-bottom:0}
+  .tugas-box ol{margin:8px 0 0 20px;font-size:.85rem;color:var(--fg-muted)}
+  .tugas-box ol li{margin-bottom:6px}
+
+  /* kesimpulan */
+  .kesimpulan{background:var(--card-alt);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:20px 0}
+  .kesimpulan h3{font-size:1rem;font-weight:600;margin-bottom:12px}
+  .kesimpulan ul{margin:0 0 0 20px;font-size:.85rem;color:var(--fg-muted)}
+  .kesimpulan ul li{margin-bottom:6px}
+  .kesimpulan ul li strong{color:var(--fg)}
+
+  /* nav bawah */
+  .modul-nav{display:flex;justify-content:space-between;gap:16px;margin:32px 0 40px}
+  .modul-nav a{display:flex;align-items:center;gap:8px;padding:14px 20px;border-radius:var(--radius-sm);font-size:.85rem;font-weight:500;text-decoration:none;transition:all .2s}
+  .modul-nav .prev{background:var(--card);border:1px solid var(--border);color:var(--fg-muted)}
+  .modul-nav .prev:hover{background:var(--card-alt);color:var(--fg)}
+  .modul-nav .next{background:var(--accent);color:#fff;margin-left:auto}
+  .modul-nav .next:hover{transform:translateX(2px);box-shadow:0 4px 16px rgba(16,185,129,0.2)}
+  .modul-nav .disabled{opacity:0.4;cursor:default}
+
+  .footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);font-size:.75rem;color:var(--fg-dim);margin-top:16px}
+  .footer strong{color:var(--fg-muted)}
+
+  @media(min-width:768px){
+    .modul-header h1{font-size:2.4rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="container nav-inner">
+    <a href="/guruaffiliate/" class="logo">🎓 <span>Guru Affiliate</span></a>
+    <div class="nav-links">
+      <a href="/guruaffiliate/">Beranda</a>
+      <a href="/guruaffiliate/kursus" class="active">🎓 Kursus</a>
+      <a href="/guruaffiliate/artikel">📚 Artikel</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="modul-header">
+    <div class="modul-breadcrumb">
+      <a href="/guruaffiliate/kursus">🎓 Kursus</a> <span>→</span> Modul 1
+    </div>
+    <div class="badge">📖 Modul 1 dari 8</div>
+    <h1><span>Mindset & Fundamental</span> Affiliate Shopee</h1>
+    <p class="sub">Sebelum lo mulai nyari link dan nge-share, lo harus paham dulu: affiliate tuh apa, bedanya sama reseller, dan yang paling penting — pola pikir yang bikin lo bertahan.</p>
+    <div class="meta">
+      <span>⏱️ 15 menit baca</span>
+      <span>📝 1 tugas praktik</span>
+      <span>🎯 Fundamental</span>
+    </div>
+  </div>
+
+  <!-- BAGIAN 1 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🤔</span> Apa Itu Affiliate Marketing?</div>
+
+    <p><strong>Affiliate marketing</strong> adalah sistem bagi hasil. Lo merekomendasikan produk orang lain (dari Shopee), dan setiap kali ada yang beli lewat link lo — lo dapet komisi.</p>
+    <p>Sederhananya: <strong>lo jadi sales-nya Shopee tanpa perlu punya stok, tanpa perlu packing, tanpa perlu ngirim.</strong> Lo cuma perlu ngasih tau orang. Sisanya Shopee yang urus.</p>
+
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/affiliateintro/800/450" alt="Ilustrasi affiliate marketing" loading="lazy">
+      <div class="image-caption">Cara kerja affiliate: lo share link → orang beli → lo dapet komisi</div>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Komisi Shopee berkisar 1% - 20%</strong> tergantung kategori produk. Fashion & elektronik biasanya 1-5%, tapi produk digital atau kesehatan bisa 10-20% per item.</p>
+    </div>
+  </div>
+
+  <!-- BAGIAN 2 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🔄</span> Affiliate vs Reseller — Jangan Sampai Salah</div>
+
+    <p>Banyak pemula ngira affiliate sama kayak reseller. <strong>Beda banget, bre.</strong></p>
+
+    <div class="insight">
+      <div class="insight-label">Perbedaan Utama</div>
+      <p><strong>Reseller:</strong> Lo beli barang dulu (modal keluar), lo jual lagi, lo tanggung resiko barang gak laku. Lo juga yang packing & kirim.</p>
+      <p style="margin-top:8px"><strong>Affiliate:</strong> Lo gak perlu beli barang. Lo cuma share link. Kalo ada yang beli — lo dapet komisi. Kalo gak ada yang beli — lo gak rugi apa-apa.</p>
+    </div>
+
+    <p>Lo bisa bayangin: affiliate itu <strong>zero risk, zero modal.</strong> Yang lo keluarin cuma waktu & kuota buat bikin konten. Itu kenapa ini cocok banget buat pemula yang baru mau nyemplung.</p>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>Tapi inget:</strong> Zero modal bukan berarti zero effort. Kalo lo males bikin konten, ya gak akan ada yang klik link lo. Affiliate itu butuh <strong>konsistensi</strong>, bukan modal duit.</p>
+    </div>
+  </div>
+
+  <!-- BAGIAN 3 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🧠</span> Mindset yang Bikin Lo Bertahan</div>
+
+    <p>Dari ngamatin para praktisi affiliate kayak <strong>@rizalilmucuann</strong> (57 juta dari text-only) dan pengalaman praktisi lain, ada <strong>3 mindset</strong> yang membedakan yang sukses vs yang menyerah di bulan pertama:</p>
+
+    <div class="insight">
+      <div class="insight-label">🔥 Mindset #1: Cerita, Bukan Jualan</div>
+      <p>Orang gak suka dijualin — tapi mereka suka denger cerita. @rizalilmucuann bilang: <strong>"Gue gak pernah jualan ke 'affiliator'. Gue jualan ke 'orang umum yang punya masalah'."</strong> Bedanya tipis tapi hasilnya jomplang.</p>
+      <p style="margin-top:8px">❌ "Ini produk diskon 50%, link di bio"<br>✅ "Buat lo yang pulang kerja muka berminyak, ini 3 step simpel yang gue pake tiap hari"</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">🔄 Mindset #2: Konsistensi > Intensitas</div>
+      <p>@rizalilmucuann ngulang <strong>1 pola yang sama selama 4 bulan.</strong> Bukan gonta-ganti strategi tiap minggu. Pilih 1 pendekatan, ulangi terus, evaluasi, perbaiki sedikit. Jangan gas pol 2 minggu terus kapok karena hasil belum keluar.</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">📊 Mindset #3: Data-Driven, Bukan Feeling</div>
+      <p>Kalo ada produk yang gak laku — jangan curiga "ah ini produknya jelek". Cek dulu: <strong>berapa orang yang liat konten lo? berapa yang klik? berapa yang beli?</strong> Mungkin masalahnya di konten, bukan di produk. Ukur, evaluasi, ulangi.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">🔥</div>
+      <p><strong>Real talk:</strong> 90% affiliator berhenti di 2 bulan pertama. Yang bertahan sampe 6 bulan biasanya udah mulai liat hasil. <strong>Bukan masalah pinter atau gak — tapi siapa yang paling tahan banting.</strong></p>
+    </div>
+  </div>
+
+  <!-- BAGIAN 4 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">📋</span> Apa Aja yang Lo Butuhin?</div>
+
+    <p>Ini checklist modal yang lo perlukan. Kalo lo udah punya semua — lo siap mulai:</p>
+
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/checklist/800/400" alt="Ilustrasi checklist persiapan" loading="lazy">
+      <div class="image-caption">Modal utama: HP, kuota, dan kemauan belajar</div>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">✅</div>
+      <div>
+        <p><strong>📱 HP Android</strong> — minimal RAM 4GB, storage 64GB. Ini yang lo pake sekarang.</p>
+        <p style="margin-top:6px"><strong>🌐 Kuota internet</strong> — buat browsing, upload konten, riset produk. Gak perlu banyak-banyak.</p>
+        <p style="margin-top:6px"><strong>📲 Akun Shopee</strong> — lo pasti udah punya. Kalo belom, download aja.</p>
+        <p style="margin-top:6px"><strong>📸 Akun media sosial</strong> — minimal 1 platform. Rekomendasi: Threads (organic, gampang viral).</p>
+        <p style="margin-top:6px"><strong>📝 Kemauan nulis</strong> — gak perlu jago. Yang penting lo mau cerita. Latihan nanti menyusul.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:12px">Itu aja. <strong>Gak perlu laptop, gak perlu kamera, gak perlu modal 100rb buat stok barang.</strong></p>
+  </div>
+
+  <!-- BAGIAN 5 -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🚀</span> Ekspektasi Realistis</div>
+
+    <p>Biar gak kecewa, lo harus tau angka-angka realistis di dunia affiliate:</p>
+
+    <div class="insight">
+      <div class="insight-label">📈 Realistis vs Mimpi</div>
+      <p><strong>Bulan 1:</strong> Rp0 - Rp50.000. Wajar. Lo masih belajar, masih nyari pola yang cocok.</p>
+      <p style="margin-top:6px"><strong>Bulan 2-3:</strong> Rp100.000 - Rp1.000.000. Pola mulai dapet, beberapa konten mulai menghasilkan.</p>
+      <p style="margin-top:6px"><strong>Bulan 4-6:</strong> Rp1.000.000 - Rp10.000.000+. Ini kalo lo udah konsisten dan dapet timing yang tepat (payday season).</p>
+      <p style="margin-top:6px"><strong>Bulan 7+:</strong> Bisa tembus puluhan juta kayak @rizalilmucuann — kalo udah punya sistem.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⏳</div>
+      <p><strong>Jangan berharap 57 juta di bulan pertama.</strong> Itu hasil 4 bulan konsistensi pake 1 pola yang sama. Proses itu perlu dinikmati, bukan diratapi.</p>
+    </div>
+  </div>
+
+  <!-- TUGAS -->
+  <div class="section">
+    <div class="tugas-box">
+      <div class="label">📝 Tugas Modul 1</div>
+      <h4>Tentukan Niche & Platform Awal</h4>
+      <p>Sebelum lanjut ke modul 2, lo harus punya jawaban dari 3 pertanyaan ini:</p>
+      <ol>
+        <li><strong>Apa minat atau hobi lo?</strong> (fashion, skincare, gadget, otomotif, ibu-ibu, kesehatan, dll) — ini bakal jadi topik konten lo</li>
+        <li><strong>Platform apa yang lo pake pertama?</strong> Pilih 1 aja. Rekomendasi: Threads atau Twitter/X — paling gampang buat text-only</li>
+        <li><strong>Siapa target audiens lo?</strong> Coba deskripsiin 1 paragraf: umur, pekerjaan, masalah apa yang mereka hadapi</li>
+      </ol>
+      <p style="margin-top:12px">Gak perlu dikumpulin ke siapapun — cukup lo tulis di notes HP atau lembar kertas. Ini jadi <strong>kompas lo</strong> selama belajar affiliate.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Kesulitan milih niche? Mulai dari yang lo alamin sendiri.</strong> Masalah lo sehari-hari adalah konten yang paling relatable buat orang lain. Contoh: "muka berminyak", "rambut rontok", "HP lemot", "dompet tipis" — semua itu bisa jadi konten affiliate.</p>
+    </div>
+  </div>
+
+  <!-- KESIMPULAN -->
+  <div class="section">
+    <div class="kesimpulan">
+      <h3>🎯 Rangkuman Modul 1</h3>
+      <ul>
+        <li><strong>Affiliate</strong> = bagi hasil. Lo share link → orang beli → lo dapet komisi. Zero modal, zero stok, zero resiko.</li>
+        <li><strong>Jangan jadi reseller</strong> — affiliate lebih ringan & cocok buat pemula.</li>
+        <li><strong>3 mindset utama:</strong> cerita bukan jualan, konsisten bukan intens, data bukan feeling.</li>
+        <li><strong>Modal cuma:</strong> HP + kuota + kemauan nulis. Gak perlu kamera atau laptop.</li>
+        <li><strong>Ekspektasi realistis:</strong> bulan 1 masih belajar, bulan 4-6 baru mulai liat hasil berarti.</li>
+      </ul>
+    </div>
+
+    <p style="color:var(--fg-dim);font-size:.85rem;margin-top:12px">Sumber: @rizalilmucuann, @tipsgaptek, dan pengalaman praktisi affiliate Shopee Indonesia.</p>
+  </div>
+
+  <!-- NAV BAWAH -->
+  <div class="modul-nav">
+    <a href="/guruaffiliate/kursus" class="prev">← 🎓 Semua Modul</a>
+    <a href="#" class="next disabled">Modul 2 → 🔒</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p><strong>Guru Affiliate</strong> — Modul 1 dari 8 · 2026</p>
+</div>
+
+</body>
+</html>

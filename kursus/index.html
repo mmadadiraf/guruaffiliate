@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎓 Kursus — Guru Affiliate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#09090b;--card:#111114;--card-alt:#1a1a1f;--border:rgba(255,255,255,0.06);
+    --fg:#e4e4e7;--fg-muted:#a1a1aa;--fg-dim:#71717a;--accent:#10b981;--accent2:#a78bfa;
+    --accent3:#0ea5e9;--accent4:#f59e0b;--font:'Inter',-apple-system,sans-serif;--radius:16px;--radius-sm:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.7}
+  .container{max-width:800px;margin:0 auto;padding:0 20px}
+
+  .nav{padding:16px 0;border-bottom:1px solid var(--border);background:rgba(9,9,11,0.8);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--fg)}
+  .logo span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .nav-links{display:flex;gap:16px;font-size:.85rem;flex-wrap:wrap}
+  .nav-links a{color:var(--fg-muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--fg)}
+  .nav-links .active{color:var(--accent)}
+
+  .page-header{padding:40px 0 24px;text-align:center}
+  .page-header h1{font-size:2rem;font-weight:800;letter-spacing:-0.03em}
+  .page-header h1 span{background:linear-gradient(135deg,#f4f4f5,#a1a1aa,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .page-header p{color:var(--fg-muted);font-size:.9rem;margin-top:8px}
+
+  .intro-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:32px}
+  .intro-card h2{font-size:1rem;font-weight:600;margin-bottom:8px}
+  .intro-card p{font-size:.85rem;color:var(--fg-muted)}
+  .intro-card ol{margin:12px 0 0 20px;font-size:.85rem;color:var(--fg-muted)}
+  .intro-card ol li{margin-bottom:6px}
+  .intro-card ol li strong{color:var(--fg)}
+
+  .modul-list{display:grid;gap:12px;margin-bottom:40px}
+  .modul-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:all .2s}
+  .modul-item:hover{border-color:rgba(16,185,129,0.2);transform:translateX(4px)}
+  .modul-item.disabled{opacity:0.5;cursor:default}
+  .modul-item.disabled:hover{transform:none;border-color:var(--border)}
+  .modul-num{width:40px;height:40px;border-radius:10px;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.2);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;flex-shrink:0;margin-top:2px}
+  .modul-content{flex:1}
+  .modul-content h4{font-size:.95rem;font-weight:600;margin-bottom:4px}
+  .modul-content p{font-size:.82rem;color:var(--fg-muted)}
+  .modul-badge{display:inline-block;font-size:.65rem;padding:2px 10px;border-radius:20px;margin-top:6px}
+  .modul-badge.siap{background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2)}
+  .modul-badge.progres{background:rgba(245,158,11,0.1);color:var(--accent4);border:1px solid rgba(245,158,11,0.2)}
+  .modul-badge.segera{background:rgba(255,255,255,0.04);color:var(--fg-dim);border:1px solid var(--border)}
+
+  .footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);font-size:.75rem;color:var(--fg-dim);margin-top:16px}
+  .footer strong{color:var(--fg-muted)}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="container nav-inner">
+    <a href="/guruaffiliate/" class="logo">🎓 <span>Guru Affiliate</span></a>
+    <div class="nav-links">
+      <a href="/guruaffiliate/">Beranda</a>
+      <a href="/guruaffiliate/kursus" class="active">🎓 Kursus</a>
+      <a href="/guruaffiliate/artikel">📚 Artikel</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>🎓 <span>Kursus Affiliate Shopee</span></h1>
+    <p>8 modul terstruktur — dari nol sampai jadi affiliator profesional</p>
+  </div>
+
+  <div class="intro-card">
+    <h2>📌 Tentang Kursus Ini</h2>
+    <p>Kursus ini dirancang untuk <strong>pemula mutlak</strong> yang pengen mulai affiliate Shopee tapi bingung dari mana. Setiap modul berisi:</p>
+    <ol>
+      <li><strong>Teori</strong> — konsep dasar yang perlu lo pahami</li>
+      <li><strong>Praktik</strong> — langkah demi langkah, langsung bisa dicoba</li>
+      <li><strong>Contoh real</strong> — dari praktisi yang udah terbukti hasilnya</li>
+      <li><strong>Tugas</strong> — biar lo gak cuma baca, tapi beneran jalan</li>
+    </ol>
+    <p style="margin-top:12px"><strong>Total durasi:</strong> ±2 minggu (1 modul per 1-2 hari) · <strong>Modal:</strong> HP + kuota doang</p>
+  </div>
+
+  <div class="modul-list">
+    <a href="modul-1" class="modul-item">
+      <div class="modul-num">01</div>
+      <div class="modul-content">
+        <h4>Mindset & Fundamental Affiliate</h4>
+        <p>Apa itu affiliate, bedanya sama reseller, dan pola pikir yang bikin lo beda dari 90% affiliator lain.</p>
+        <span class="modul-badge siap">✅ Selesai — Bisa Dibaca</span>
+      </div>
+    </a>
+    <div class="modul-item disabled">
+      <div class="modul-num">02</div>
+      <div class="modul-content">
+        <h4>Riset Produk & Pasar Shopee</h4>
+        <p>Gimana cara nemuin produk yang laku, tren naik, dan komisi gede — tanpa nebak-nebak.</p>
+        <span class="modul-badge segera">🔄 Segera</span>
+      </div>
+    </div>
+    <div class="modul-item disabled">
+      <div class="modul-num">03</div>
+      <div class="modul-content">
+        <h4>Copywriting & Storytelling Affiliate</h4>
+        <p>Pola "dari umum ke spesifik" yang bikin orang percaya duluan sebelum lo kasih link.</p>
+        <span class="modul-badge segera">🔄 Segera</span>
+      </div>
+    </div>
+    <div class="modul-item disabled">
+      <div class="modul-num">04</div>
+      <div class="modul-content">
+        <h4>Visual & AI untuk Konten</h4>
+        <p>Bikin gambar yang gak keliatan kayak patung AI — prompt rahasia biar natural.</p>
+        <span class="modul-badge segera">🔄 Segera</span>
+      </div>
+    </div>
+    <div class="modul-item disabled">
+      <div class="modul-num">05</div>
+      <div class="modul-content">
+        <h4>Strategi Payday & Calendar Timing</h4>
+        <p>Kapan orang Indonesia paling royal belanja? Tanggal 25-5 dan tanggal kembar — ini strateginya.</p>
+        <span class="modul-badge segera">🔄 Segera</span>
+      </div>
+    </div>
+    <div class="modul-item disabled">
+      <div class="modul-num">06</div>
+      <div class="modul-content">
+        <h4>Distribusi Multi-Platform</h4>
+        <p>Dari Threads, Twitter, Facebook, sampe Telegram — beda platform beda pendekatan.</p>
+        <span class="modul-badge segera">🔄 Segera</span>
+      </div>
+    </div>
+    <div class="modul-item disabled">
+      <div class="modul-num">07</div>
+      <div class="modul-content">
+        <h4>Analisis & Optimasi</h4>
+        <p>Baca data, tau mana yang kerja dan mana yang gak, terus doubling down.</p>
+        <span class="modul-badge segera">🔄 Segera</span>
+      </div>
+    </div>
+    <div class="modul-item disabled">
+      <div class="modul-num">08</div>
+      <div class="modul-content">
+        <h4>Scaling & Otomatisasi</h4>
+        <p>Dari 1 akun jadi 5, dari 5 juta jadi 50 juta — sistem yang jalan tanpa lo.</p>
+        <span class="modul-badge segera">🔄 Segera</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p><strong>Guru Affiliate</strong> — Gratis untuk semua · 2026</p>
+</div>
+
+</body>
+</html>
