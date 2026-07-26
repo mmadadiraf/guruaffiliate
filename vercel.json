@@ -1,14 +1,20 @@
 {
-  "buildCommand": "python3 _build.py",
-  "outputDirectory": ".",
   "rewrites": [
     {
+      "source": "/api/artikel",
+      "destination": "/api/artikel.mjs"
+    },
+    {
+      "source": "/api/artikel/:slug",
+      "destination": "/api/artikel.mjs"
+    },
+    {
       "source": "/artikel/:slug",
-      "destination": "/artikel/:slug/index.html"
+      "destination": "/artikel/_template.html"
     },
     {
       "source": "/artikel/:slug/",
-      "destination": "/artikel/:slug/index.html"
+      "destination": "/artikel/_template.html"
     },
     {
       "source": "/kursus/:slug",

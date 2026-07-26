@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artikel — Guru Affiliate</title>
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090b;--card:#111114;--border:rgba(255,255,255,0.06);--fg:#e4e4e7;--fg-muted:#a1a1aa;--fg-dim:#71717a;--accent:#10b981;--font:'Inter',-apple-system,sans-serif;--radius:16px;--radius-sm:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.8}
+.container{max-width:768px;margin:0 auto;padding:0 20px}
+
+.nav{padding:14px 0;border-bottom:1px solid var(--border);background:rgba(9,9,11,0.85);backdrop-filter:blur(14px);position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;max-width:960px;margin:0 auto;padding:0 20px}
+.logo{font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--fg)}
+.logo svg{width:22px;height:22px;color:var(--accent)}
+.logo span{background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:6px;font-size:.82rem;flex-wrap:wrap}
+.nav-links a{color:var(--fg-muted);text-decoration:none;padding:6px 14px;border-radius:20px;transition:all .2s}
+.nav-links a:hover{color:var(--fg);background:var(--card)}
+.nav-links .active{color:var(--fg);background:rgba(16,185,129,0.1)}
+
+.article-header{padding:40px 0 24px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 14px;font-size:.65rem;color:var(--accent);font-weight:500;margin-bottom:16px}
+.article-header h1{font-size:1.8rem;font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:8px}
+.article-meta{display:flex;gap:16px;font-size:.75rem;color:var(--fg-dim);flex-wrap:wrap;margin-bottom:8px}
+.article-meta span{display:flex;align-items:center;gap:4px}
+
+.content{padding:0 0 40px}
+.content p{color:var(--fg-muted);font-size:.92rem;margin-bottom:14px;line-height:1.8}
+.content p strong{color:var(--fg)}
+.content .source{margin-top:24px;padding:12px 16px;background:var(--card);border-radius:var(--radius-sm);border:1px solid var(--border);font-size:.8rem;color:var(--fg-dim);text-align:center}
+.content hr{margin:20px 0;border:none;border-top:1px solid var(--border)}
+
+.loading{text-align:center;padding:60px 0;color:var(--fg-dim)}
+.loading .spin{display:inline-block;width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error{text-align:center;padding:60px 0;color:var(--fg-dim)}
+.error .big{font-size:3rem;margin-bottom:12px}
+
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--fg-muted);text-decoration:none;font-size:.82rem;margin-bottom:16px;transition:color .2s}
+.back-link:hover{color:var(--fg)}
+
+.auto-note{text-align:center;font-size:.7rem;color:var(--fg-dim);margin-top:16px;font-style:italic;padding:8px 16px}
+
+.footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);font-size:.72rem;color:var(--fg-dim)}
+.footer strong{color:var(--fg-muted)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a href="/" class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><span>Guru Affiliate</span></a>
+<div class="nav-links">
+<a href="/">Beranda</a>
+<a href="/kursus">Kursus</a>
+<a href="/artikel" class="active">Artikel</a>
+</div></div></nav>
+
+<div class="container">
+  <div id="artikel-detail">
+    <div class="loading"><div class="spin"></div><p>Memuat artikel...</p></div>
+  </div>
+</div>
+
+<footer class="footer"><p><strong>Guru Affiliate</strong> — 2026</p></footer>
+
+<script>
+function getSlug() {
+  const path = window.location.pathname;
+  const match = path.match(/\/artikel\/(.+)/);
+  return match ? match[1] : null;
+}
+
+async function loadArticle() {
+  const slug = getSlug();
+  if (!slug) {
+    document.getElementById('artikel-detail').innerHTML = '<div class="error"><div class="big">🤷</div><p>Artikel tidak ditemukan.</p><a href="/artikel" class="back-link">← Kembali ke artikel</a></div>';
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/artikel?slug=${slug}`);
+    if (!res.ok) throw new Error('Not found');
+    const artikel = await res.json();
+    
+    // Update meta tags
+    document.title = `${artikel.title} — Guru Affiliate`;
+    document.querySelector('meta[name="description"]').content = artikel.title;
+    
+    const date = artikel.created_at ? new Date(artikel.created_at).toLocaleDateString('id-ID', {day:'numeric',month:'short',year:'numeric'}) : '-';
+    
+    document.getElementById('artikel-detail').innerHTML = `
+      <a href="/artikel" class="back-link">← Kembali ke artikel</a>
+      <div class="article-header">
+        <div class="article-badge">🤖 Auto-Article · @${artikel.account}</div>
+        <h1>${artikel.title}</h1>
+        <div class="article-meta">
+          <span>📅 ${date}</span>
+          <span>👤 @${artikel.account}</span>
+          <span>⚡ Auto</span>
+        </div>
+      </div>
+      <div class="content">
+        ${artikel.content_html || '<p>' + artikel.content.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + '</p>'}
+      </div>
+      <div class="auto-note">Artikel otomatis oleh SOUL Agent dari @${artikel.account} · ${new Date().toLocaleString('id-ID')}</div>
+    `;
+  } catch (e) {
+    document.getElementById('artikel-detail').innerHTML = `<div class="error"><div class="big">📭</div><p>Artikel tidak ditemukan.</p><a href="/artikel" class="back-link">← Kembali ke artikel</a></div>`;
+  }
+}
+
+loadArticle();
+</script>
+</body>
+</html>

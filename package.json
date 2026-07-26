@@ -1,0 +1,24 @@
+{
+  "name": "guruaffiliate",
+  "version": "1.0.0",
+  "description": "Portal affiliate Indonesia \u2014 kumpulan strategi, trik, dan pengalaman nyata dari para praktisi affiliate marketing Indonesia.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmadadiraf/guruaffiliate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mmadadiraf/guruaffiliate/issues"
+  },
+  "homepage": "https://github.com/mmadadiraf/guruaffiliate#readme",
+  "dependencies": {
+    "pg": "^8.22.0"
+  }
+}
