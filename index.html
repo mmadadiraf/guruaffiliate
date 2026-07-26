@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guru Affiliate — Portal Cuan Affiliate Indonesia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#09090b;--card:#111114;--card-alt:#1a1a1f;--border:rgba(255,255,255,0.06);
+    --fg:#e4e4e7;--fg-muted:#a1a1aa;--fg-dim:#71717a;--accent:#10b981;--accent2:#a78bfa;
+    --accent3:#0ea5e9;--accent4:#f59e0b;--font:'Inter',-apple-system,sans-serif;--radius:16px;--radius-sm:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.7}
+  .container{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* NAV */
+  .nav{padding:16px 0;border-bottom:1px solid var(--border);background:rgba(9,9,11,0.8);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--fg)}
+  .logo span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .nav-links{display:flex;gap:20px;font-size:.85rem}
+  .nav-links a{color:var(--fg-muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--fg)}
+
+  /* HERO */
+  .hero{text-align:center;padding:60px 20px 48px}
+  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 14px;font-size:.7rem;color:var(--accent);font-weight:500;margin-bottom:20px}
+  .hero h1{font-size:2.6rem;font-weight:900;letter-spacing:-0.04em;line-height:1.1}
+  .hero h1 span{background:linear-gradient(135deg,#f4f4f5 0%,#a1a1aa 50%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero p{color:var(--fg-muted);font-size:1.05rem;margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+  .hero-stats{display:flex;justify-content:center;gap:32px;margin-top:24px}
+  .hero-stats div{text-align:center}
+  .hero-stats .num{font-size:1.5rem;font-weight:700;color:var(--fg)}
+  .hero-stats .lbl{font-size:.7rem;color:var(--fg-dim);text-transform:uppercase;letter-spacing:.04em}
+
+  /* SECTION TITLE */
+  .section-title{font-size:1.3rem;font-weight:700;margin:40px 0 20px;display:flex;align-items:center;gap:10px}
+  .section-title .line{flex:1;height:1px;background:var(--border)}
+
+  /* CARD GRID */
+  .card-grid{display:grid;gap:16px;margin-bottom:40px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .25s;text-decoration:none;color:inherit;display:block}
+  .card:hover{border-color:rgba(16,185,129,0.2);transform:translateY(-2px)}
+  .card-cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:600;margin-bottom:8px}
+  .card h3{font-size:1rem;font-weight:600;margin-bottom:6px;line-height:1.4}
+  .card p{font-size:.82rem;color:var(--fg-muted);line-height:1.6}
+  .card-meta{display:flex;gap:12px;margin-top:12px;font-size:.7rem;color:var(--fg-dim)}
+  .card-meta span{display:flex;align-items:center;gap:4px}
+
+  /* ABOUT */
+  .about{padding:40px 0;border-top:1px solid var(--border);text-align:center}
+  .about h2{font-size:1.2rem;font-weight:700;margin-bottom:12px}
+  .about p{color:var(--fg-muted);font-size:.9rem;max-width:560px;margin:0 auto 16px}
+
+  /* FOOTER */
+  .footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);font-size:.75rem;color:var(--fg-dim)}
+  .footer strong{color:var(--fg-muted)}
+
+  @media(min-width:768px){
+    .hero h1{font-size:3.5rem}
+    .card-grid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo">🎓 <span>Guru Affiliate</span></a>
+    <div class="nav-links">
+      <a href="/">Beranda</a>
+      <a href="/artikel">Artikel</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">🔥 Portal Affiliate Indonesia</div>
+  <h1><span>Belajar Cuan</span><br>Dari Para Praktisi</h1>
+  <p>Kumpulan strategi, trik, dan pengalaman nyata dari affiliate marketer Indonesia. Dari text-only sampe strategi payday — semua dibahas tuntas.</p>
+  <div class="hero-stats">
+    <div><div class="num">3</div><div class="lbl">Artikel</div></div>
+    <div><div class="num">🌱</div><div class="lbl">Baru Mulai</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section-title">
+    <span>📚 Artikel Terbaru</span>
+    <span class="line"></span>
+  </div>
+
+  <div class="card-grid">
+    <a href="artikel/konten-affiliate-57juta" class="card">
+      <div class="card-cat">💰 Strategi</div>
+      <h3>57 Juta dari Text-Only: Modal Cerita, Bukan Kamera</h3>
+      <p>Gak main video, gak main live — cuma ngulang 1 pola yang sama selama 4 bulan. Hasilnya nyaris 60 juta.</p>
+      <div class="card-meta">
+        <span>📅 26 Jul 2026</span>
+        <span>👤 @rizalilmucuann</span>
+      </div>
+    </a>
+
+    <a href="artikel/konten-nomor-hp-bocor" class="card">
+      <div class="card-cat">🛡️ Privacy</div>
+      <h3>Nomor HP Bocor? Mutus Jejak Digital Sebelum Terlambat</h3>
+      <p>Gak pernah daftar apa-apa tapi tiba-tiba ditelpon pinjol? Ini cara proteksi diri dari kebocoran data.</p>
+      <div class="card-meta">
+        <span>📅 26 Jul 2026</span>
+        <span>👤 @tipsgaptek</span>
+      </div>
+    </a>
+
+    <a href="artikel/konten-google-hacks" class="card">
+      <div class="card-cat">🔍 Tutorial</div>
+      <h3>Google Hacks: Dapetin File Asli Gratis (PDF, Excel, Word)</h3>
+      <p>File digital yang biasa dijual 30-50rb ternyata bisa didapetin gratis. Ini trik Google Dorking-nya.</p>
+      <div class="card-meta">
+        <span>📅 26 Jul 2026</span>
+        <span>👤 @tipsgaptek</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="about">
+    <h2>Tentang Guru Affiliate</h2>
+    <p>Kami mengumpulkan thread-thread terbaik dari affiliate marketer Indonesia, merangkumnya ulang dengan tambahan insight, dan menyajikannya dalam format artikel yang enak dibaca. Semua sumber tetap dicantumkan.</p>
+    <p style="font-size:.8rem;color:var(--fg-dim)">Dikurasi oleh <strong>SOUL Agent</strong> · 2026</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p><strong>Guru Affiliate</strong> — Portal Cuan Affiliate Indonesia</p>
+  <p style="margin-top:4px">© 2026 · Dikurasi dari berbagai sumber Threads</p>
+</div>
+
+</body>
+</html>

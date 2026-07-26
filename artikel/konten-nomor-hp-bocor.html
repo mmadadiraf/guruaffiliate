@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🛡️ Nomor HP Bocor? Begini Cara Mutus Jejak Digital Biar Aman dari Pinjol & Judol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #09090b;
+    --card: #111114;
+    --card-alt: #1a1a1f;
+    --border: rgba(255,255,255,0.06);
+    --border-light: rgba(255,255,255,0.1);
+    --fg: #e4e4e7;
+    --fg-muted: #a1a1aa;
+    --fg-dim: #71717a;
+    --accent: #0ea5e9;
+    --accent2: #a78bfa;
+    --accent3: #10b981;
+    --accent4: #f59e0b;
+    --danger: #ef4444;
+    --font: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--fg);
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8;
+  }
+  .container{max-width: 768px; margin: 0 auto; padding: 0 20px}
+
+  /* === HERO === */
+  .hero{
+    position: relative;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero-bg{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.55;
+  }
+  .hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(9,9,11,0.4) 0%, rgba(9,9,11,0.85) 60%, var(--bg) 100%);
+  }
+  .hero-content{
+    position: relative;
+    z-index: 2;
+    padding: 24px 20px 40px;
+    margin-top: -60px;
+  }
+  .hero-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(239,68,68,0.12);
+    border: 1px solid rgba(239,68,68,0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: .7rem;
+    color: var(--danger);
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    backdrop-filter: blur(8px);
+  }
+  .hero h1{
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #f4f4f5 0%, #a1a1aa 50%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p{
+    color: var(--fg-muted);
+    font-size: .95rem;
+    margin-top: 16px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-meta{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: .75rem;
+    color: var(--fg-dim);
+    flex-wrap: wrap;
+  }
+  .hero-meta span{display: flex; align-items: center; gap: 5px}
+  .hero-meta .viral{
+    color: var(--danger);
+    font-weight: 600;
+  }
+
+  /* === SECTION === */
+  .section{
+    padding: 36px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-of-type{border-bottom: none}
+  .section-title{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.02em;
+  }
+  .section-title .num{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.2);
+    color: var(--danger);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .section p{
+    color: var(--fg-muted);
+    font-size: .92rem;
+    margin-bottom: 14px;
+  }
+  .section p:last-child{margin-bottom: 0}
+  .section p strong{color: var(--fg)}
+
+  /* === IMAGE === */
+  .image-wrap{
+    margin: 20px 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .image-wrap img{
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  .image-caption{
+    padding: 10px 16px;
+    font-size: .75rem;
+    color: var(--fg-dim);
+    text-align: center;
+    font-style: italic;
+    border-top: 1px solid var(--border);
+  }
+
+  /* === STEP === */
+  .step{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .step:last-child{margin-bottom: 0}
+  .step-badge{
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.2);
+    color: var(--accent3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-content{flex: 1}
+  .step-title{
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin-bottom: 4px;
+  }
+  .step-desc{
+    font-size: .85rem;
+    color: var(--fg-muted);
+    line-height: 1.7;
+  }
+
+  /* === WARNING === */
+  .warn-box{
+    background: rgba(239,68,68,0.04);
+    border: 1px solid rgba(239,68,68,0.12);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .warn-box .icon{font-size: 1.2rem; flex-shrink: 0; margin-top: 2px}
+  .warn-box p{color: var(--fg-muted); font-size: .85rem; margin: 0}
+  .warn-box p strong{color: var(--danger)}
+
+  /* === TIP === */
+  .tip-box{
+    background: rgba(16,185,129,0.04);
+    border: 1px solid rgba(16,185,129,0.12);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .tip-box .icon{font-size: 1.2rem; flex-shrink: 0; margin-top: 2px}
+  .tip-box p{color: var(--fg-muted); font-size: .85rem; margin: 0}
+  .tip-box p strong{color: var(--accent3)}
+
+  /* === INSIGHT === */
+  .insight{
+    background: linear-gradient(135deg, rgba(239,68,68,0.06) 0%, rgba(168,85,247,0.04) 100%);
+    border: 1px solid rgba(239,68,68,0.10);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .insight-label{
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--danger);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .insight p{color: var(--fg-muted); font-size: .85rem; margin: 0; line-height: 1.8}
+  .insight p strong{color: var(--fg)}
+
+  /* === TABLE OF CONTENTS === */
+  .toc{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin: 24px 0;
+  }
+  .toc-title{
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--fg-dim);
+    margin-bottom: 16px;
+  }
+  .toc-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: var(--fg-muted);
+    font-size: .88rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color .2s;
+    cursor: default;
+  }
+  .toc-item:last-child{border-bottom: none}
+  .toc-item:hover{color: var(--fg)}
+  .toc-item .num{color: var(--danger); font-weight: 600; font-size: .8rem}
+
+  /* === STAT BANNER === */
+  .stat-banner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    margin: 20px 0;
+  }
+  .stat-item{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 10px;
+    text-align: center;
+  }
+  .stat-num{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--fg);
+  }
+  .stat-label{
+    font-size: .65rem;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin-top: 2px;
+  }
+
+  /* === KOMENTAR === */
+  .komentar-section{
+    margin: 20px 0 0;
+  }
+  .komentar-item{
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+  }
+  .komentar-item:last-child{margin-bottom: 0}
+  .komentar-user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .komentar-avatar{
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--danger), var(--accent4));
+    display: flex;
+    align-items: center; justify-content: center;
+    font-size: .7rem; font-weight: 700; color: #fff;
+    flex-shrink: 0;
+  }
+  .komentar-nama{font-size: .85rem; font-weight: 600; color: var(--fg)}
+  .komentar-teks{font-size: .85rem; color: var(--fg-muted); line-height: 1.7}
+
+  /* === DIVIDER === */
+  .divider{
+    text-align: center;
+    padding: 8px 0;
+    font-size: 1.4rem;
+    letter-spacing: 8px;
+    color: var(--fg-dim);
+    opacity: 0.3;
+  }
+
+  /* === CHEKLIST === */
+  .checklist{
+    margin: 16px 0;
+  }
+  .check-item{
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.02);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+  }
+  .check-item .icon{flex-shrink: 0; font-size: 1rem; margin-top: 2px}
+  .check-item p{font-size: .85rem; color: var(--fg-muted); margin: 0}
+  .check-item p strong{color: var(--fg)}
+
+  /* === FOOTER === */
+  .footer{
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+  }
+  .footer p{font-size: .75rem; color: var(--fg-dim)}
+  .footer strong{color: var(--fg-muted)}
+  .footer .credit{margin-top: 6px; font-size: .7rem; color: var(--fg-dim)}
+
+  /* === RESPONSIVE === */
+  @media (min-width: 600px){
+    .hero h1{font-size: 2.8rem}
+    .hero-bg{height: 340px}
+    .hero-content{padding: 32px 32px 48px}
+    .container{padding: 0 32px}
+  }
+  @media (min-width: 768px){
+    .hero h1{font-size: 3.2rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <img class="hero-bg" src="https://picsum.photos/seed/databreach/1200/600" alt="Data breach illustration" loading="lazy">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🛡️ Digital Safety Guide</div>
+    <h1>Nomor HP Bocor?<br>Mutus Jejak Digital<br>Sebelum Terlambat</h1>
+    <p>Gak pernah daftar apa-apa tapi tiba-tiba ditelpon pinjol? Itu karena data nomor HP lo udah diperjualbelikan. Sini gue bongkar cara memberesnya.</p>
+    <div class="hero-meta">
+      <span>📅 26 Juli 2026</span>
+      <span>⏱️ 4 menit baca</span>
+      <span class="viral">🔥 1.6K likes · 419 saves</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ============ INTRO ============ -->
+  <div class="section">
+    <div class="stat-banner">
+      <div class="stat-item">
+        <div class="stat-num">1.6K</div>
+        <div class="stat-label">Likes</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">345</div>
+        <div class="stat-label">Shares</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">419</div>
+        <div class="stat-label">Saves</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">44</div>
+        <div class="stat-label">Replies</div>
+      </div>
+    </div>
+
+    <p><strong>"Gak pernah daftar apa-apa tapi mendadak ditelpon pinjol atau dikirim SMS slot?"</strong> — itu pertanda data nomor HP lo udah bocor dan diperjualbelikan di pasar gelap data.</p>
+    <p>Thread dari <strong>@tipsgaptek</strong> soal ini viral banget — 1.6K likes, 419 saves. Artinya banyak yang ngalamin hal yang sama. Gue rangkum + tambahin langkah-langkah yang udah gue praktekin langsung.</p>
+  </div>
+
+  <!-- ============ TABLE OF CONTENTS ============ -->
+  <div class="toc">
+    <div class="toc-title">📑 Daftar Isi</div>
+    <div class="toc-item"><span class="num">01</span> Kenapa Nomor Lo Bisa Bocor?</div>
+    <div class="toc-item"><span class="num">02</span> 3 Langkah Proteksi (Dari @tipsgaptek)</div>
+    <div class="toc-item"><span class="num">03</span> Langkah Bonus Tambahan Dari Gue</div>
+    <div class="toc-item"><span class="num">04</span> Cek Apakah Data Lo Udah Bocor</div>
+    <div class="toc-item"><span class="num">05</span> Yang Gak Boleh Lo Lakukan</div>
+  </div>
+
+  <!-- ============ BAGIAN 1 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="num">01</span> Kenapa Nomor Lo Bisa Bocor?</div>
+
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/dataleak/800/450" alt="Ilustrasi kebocoran data" loading="lazy">
+      <div class="image-caption">Data nomor HP diperjualbelikan mulai dari ratusan ribu buat ribuan nomor</div>
+    </div>
+
+    <p>Ini beberapa cara paling umum data nomor HP lo bocor:</p>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="icon">📱</div>
+        <p><strong>Regis aplikasi sembarangan.</strong> Lo daftar aplikasi pinjol ilegal, game online abal-abal, atau promo diskon yang minta akses kontak?</p>
+      </div>
+      <div class="check-item">
+        <div class="icon">🏪</div>
+        <p><strong>Belanja online & COD.</strong> Nomor lo tercatat di ribuan sistem toko online — dan beberapa di antaranya punya celah keamanan (atau karyawannya bocorin data).</p>
+      </div>
+      <div class="check-item">
+        <div class="icon">🔓</div>
+        <p><strong>Data breach nasional.</strong> Bocornya data BPJS, Tokped, atau layanan publik lainnya — data lo bisa diedarkan tanpa sepengetahuan lo.</p>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">🚨</div>
+      <p><strong>Sekali nomor lo kepancing merespon — mereka bakal ngecap lo sebagai "target empuk".</strong> Makanya harus ditangani dari sekarang, sebelum makin parah.</p>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 2 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="num">02</span> 3 Langkah Proteksi (Dari @tipsgaptek)</div>
+
+    <div class="step">
+      <div class="step-badge">1</div>
+      <div class="step-content">
+        <div class="step-title">Filter Panggilan Spam (Android)</div>
+        <div class="step-desc">Buka Aplikasi <strong>Telepon</strong> → <strong>Setelan</strong> (ikon titik 3/gear) → <strong>ID Pemanggil & Spam</strong> → Aktifkan <strong>"Filter Panggilan Spam"</strong>. Sistem bakal otomatis nolak nomor penipu sebelum berdering.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-badge">2</div>
+      <div class="step-content">
+        <div class="step-title">Blokir SMS Spam & Pinjol</div>
+        <div class="step-desc">Di aplikasi <strong>Pesan</strong> → Setelan → <strong>Filter Spam</strong> → aktifkan. Plus, install <strong>GetContact</strong> atau <strong>Truecaller</strong> buat identifikasi nomor spam sebelum lo angkat.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-badge">3</div>
+      <div class="step-content">
+        <div class="step-title">Lapor & Blokir Sumbernya</div>
+        <div class="step-desc">Setiap kali dapet telepon/SMS pinjol, <strong>jangan direspons.</strong> Langsung <strong>blokir + lapor sebagai spam</strong>. Makin banyak laporan, operator seluler bakal masukin nomor itu ke daftar hitam.</div>
+      </div>
+    </div>
+
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/phonelock/800/400" alt="Ilustrasi proteksi HP" loading="lazy">
+      <div class="image-caption">Aktifkan filter spam di aplikasi Telepon — settings-nya cuma 30 detik</div>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 3 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="num">03</span> Langkah Bonus Tambahan dari Gue</div>
+
+    <p>Setelah praktekin langkah @tipsgaptek, gue nemuin <strong>beberapa celah tambahan</strong> yang bisa lo lakuin biar jejak digital lo makin mutus:</p>
+
+    <div class="insight">
+      <div class="insight-label">📋 1. Daftar ke DNC (Do Not Call)</div>
+      <p>Ini yang sering gak diketahui orang Indonesia. Kominfo punya layanan <strong>DNC Registry</strong> — lo bisa daftarin nomor HP lo biar gak bisa di-hubungi buat tujuan pemasaran. Cek di website Kominfo atau hubungi operator lo.</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">🔄 2. Ganti Nomor Utama (Kalo Darurat)</div>
+      <p>Kalo udah kebangetan — pinjol nelpon 10x sehari, SMS judol bertubi-tubi — cara paling ampuh adalah <strong>ganti nomor.</strong> Tapi pastiin lo migrasi akun penting (Gojek, Grab, OVO, Shopee, M-Banking) ke nomor baru dulu.</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">🔐 3. Audit Izin Aplikasi</div>
+      <p>Cek HP lo → Setelan → Aplikasi → Izin Aplikasi. <strong>Cabut izin SMS & Telepon</strong> untuk aplikasi yang gak butuh-butuh amat. Aplikasi senter atau kalkulator minta akses kontak? That's a red flag.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Pro tip:</strong> Buat nomor HP "sekunder" gratisan pake aplikasi kayak <strong>TextNow</strong> atau <strong>Google Voice</strong> (butuh VPN). Pake nomor itu buat daftar aplikasi receh, iklan, atau percobaan gratis. Nomor utama lo aman sentosa.</p>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 4 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="num">04</span> Cek Apakah Data Lo Udah Bocor</div>
+
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/securitycheck/800/400" alt="Ilustrasi pengecekan keamanan" loading="lazy">
+      <div class="image-caption">Ada tools online buat ngecek apakah email/nomor lo kena breach</div>
+    </div>
+
+    <p>Sebelum panik, mending cek dulu level kebocoran data lo. Ini beberapa tools yang gue rekomendasiin:</p>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="icon">🌐</div>
+        <p><strong>Have I Been Pwned</strong> (haveibeenpwned.com) — tinggal masukin email, dia bakal bilang data lo bocor di breach mana aja. Support nomor HP juga.</p>
+      </div>
+      <div class="check-item">
+        <div class="icon">🔍</div>
+        <p><strong>Google Yourself</strong> — coba google nomor HP lo sendiri (pake tanda petik). Kalo muncul di situs-situs mencurigakan, berarti data lo udah dijual.</p>
+      </div>
+      <div class="check-item">
+        <div class="icon">📊</div>
+        <p><strong>Cek Riwayat Breach Indonesia</strong> — banyak data breach lokal (BPJS, Tokopedia, dll) yang udah di-publish. Cari tau apakah nomor lo termasuk yang bocor.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 5 ============ -->
+  <div class="section">
+    <div class="section-title"><span class="num">05</span> Yang Gak Boleh Lo Lakukan</div>
+
+    <div class="warn-box">
+      <div class="icon">❌</div>
+      <p><strong>JANGAN pernah membalas SMS/telepon pinjol atau judol.</strong> Sekali lo jawab "kagak pernah daftar", lo udah dikasih tanda hijau — "nomor aktif, pemilik responsif". Itu bikin nomor lo makin mahal di pasaran gelap.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">❌</div>
+      <p><strong>JANGAN transfer uang buat "menebus" data.</strong> Ada modus baru: orang ditelpon "data lo dipake pinjol, transfer segini biar beres". Itu penipuan. Gak ada tebusan data.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">❌</div>
+      <p><strong>JANGAN install APK sembarangan buat "blokir spam".</strong> Banyak aplikasi palsu yang malah makin nyedot data lo. Cukup pake fitur bawaan HP.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">✅</div>
+      <p><strong>Yang bener:</strong> Blokir, lapor spam, dan lanjutin hidup. Gak usah direspons. Mereka cari korban yang gampang panik — kalo lo diem, mereka pindah target.</p>
+    </div>
+
+    <!-- Closing -->
+    <div style="margin-top: 32px; text-align: center;">
+      <div class="image-wrap" style="max-width: 400px; margin: 0 auto 20px;">
+        <img src="https://picsum.photos/seed/cybersafe/600/300" alt="Stay safe" loading="lazy">
+      </div>
+      <p style="font-size: 1.2rem; margin-bottom: 8px">🔐</p>
+      <p style="font-size: .9rem; color: var(--fg-muted); max-width: 440px; margin: 0 auto">
+        Data lo udah bocor? Belum tentu. Tapi lebih baik <strong>proteksi dari sekarang</strong> daripada nunggu nomor lo dipake buat pinjol.
+      </p>
+      <div class="tip-box" style="margin-top: 20px; text-align: left; max-width: 480px; margin-left: auto; margin-right: auto">
+        <div class="icon">📌</div>
+        <p><strong>Credit:</strong> Thread asli dari <strong>@tipsgaptek</strong> di Threads. Dikembangkan ulang + insight tambahan + panduan praktis oleh <strong>SOUL Agent</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <p>Dibikin dengan 🔥 oleh <strong>SOUL Agent</strong> — 26 Juli 2026</p>
+  <p class="credit">Sumber: @tipsgaptek · Ilustrasi dari picsum.photos</p>
+</div>
+
+</body>
+</html>

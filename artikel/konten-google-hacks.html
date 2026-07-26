@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🔍 Google Hacks: Cara Dapetin File Asli Gratis (PDF, Excel, Word)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #09090b;
+    --card: #111114;
+    --card-alt: #1a1a1f;
+    --border: rgba(255,255,255,0.06);
+    --border-light: rgba(255,255,255,0.1);
+    --fg: #e4e4e7;
+    --fg-muted: #a1a1aa;
+    --fg-dim: #71717a;
+    --accent: #0ea5e9;
+    --accent2: #a78bfa;
+    --accent3: #10b981;
+    --accent4: #f59e0b;
+    --font: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--fg);
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8;
+  }
+  .container{max-width: 768px; margin: 0 auto; padding: 0 20px}
+
+  /* === HERO === */
+  .hero{
+    position: relative;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero-bg{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.6;
+  }
+  .hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(9,9,11,0.3) 0%, rgba(9,9,11,0.85) 60%, var(--bg) 100%);
+  }
+  .hero-content{
+    position: relative;
+    z-index: 2;
+    padding: 24px 20px 40px;
+    margin-top: -60px;
+  }
+  .hero-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(167,139,250,0.12);
+    border: 1px solid rgba(167,139,250,0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: .7rem;
+    color: var(--accent2);
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    backdrop-filter: blur(8px);
+  }
+  .hero h1{
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #f4f4f5 0%, #a1a1aa 50%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p{
+    color: var(--fg-muted);
+    font-size: .95rem;
+    margin-top: 16px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-meta{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: .75rem;
+    color: var(--fg-dim);
+  }
+  .hero-meta span{display: flex; align-items: center; gap: 5px}
+
+  /* === SECTION === */
+  .section{
+    padding: 36px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-of-type{border-bottom: none}
+  .section-title{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.02em;
+  }
+  .section-title .num{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(14,165,233,0.1);
+    border: 1px solid rgba(14,165,233,0.2);
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .section p{
+    color: var(--fg-muted);
+    font-size: .92rem;
+    margin-bottom: 14px;
+  }
+  .section p:last-child{margin-bottom: 0}
+  .section p strong{color: var(--fg)}
+
+  /* === IMAGE === */
+  .image-wrap{
+    margin: 20px 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .image-wrap img{
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  .image-caption{
+    padding: 10px 16px;
+    font-size: .75rem;
+    color: var(--fg-dim);
+    text-align: center;
+    font-style: italic;
+    border-top: 1px solid var(--border);
+  }
+
+  /* === ILLUSTRATION === */
+  .illus-row{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+  .illus-item{
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    max-width: 160px;
+  }
+  .illus-item svg{width: 40px; height: 40px; margin-bottom: 8px}
+  .illus-item .label{
+    font-size: .7rem;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  /* === CODE === */
+  .code-box{
+    background: #0d0d14;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: .82rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    color: #a1a1aa;
+  }
+  .code-box .comment{color: #52525b; font-style: italic}
+  .code-box .cmd{color: var(--accent3)}
+  .code-box .str{color: var(--accent4)}
+  .code-box .kwd{color: var(--accent2)}
+  .code-box .flag{color: var(--accent)}
+
+  /* === CARD GRID === */
+  .card-grid{
+    display: grid;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .card-item{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    transition: border-color .2s;
+  }
+  .card-item:hover{border-color: var(--border-light)}
+  .card-label{
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--fg-dim);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .card-code{
+    font-family: var(--mono);
+    font-size: .85rem;
+    color: var(--accent3);
+    word-break: break-all;
+    line-height: 1.6;
+  }
+  .card-desc{
+    font-size: .82rem;
+    color: var(--fg-muted);
+    margin-top: 6px;
+  }
+
+  /* === TIP === */
+  .tip-box{
+    background: rgba(16,185,129,0.04);
+    border: 1px solid rgba(16,185,129,0.12);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .tip-box .icon{font-size: 1.2rem; flex-shrink: 0; margin-top: 2px}
+  .tip-box p{color: var(--fg-muted); font-size: .85rem; margin: 0}
+  .tip-box p strong{color: var(--accent3)}
+
+  .warn-box{
+    background: rgba(245,158,11,0.04);
+    border: 1px solid rgba(245,158,11,0.12);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .warn-box .icon{font-size: 1.2rem; flex-shrink: 0; margin-top: 2px}
+  .warn-box p{color: var(--fg-muted); font-size: .85rem; margin: 0}
+  .warn-box p strong{color: var(--accent4)}
+
+  /* === INSIGHT === */
+  .insight{
+    background: linear-gradient(135deg, rgba(167,139,250,0.06) 0%, rgba(14,165,233,0.04) 100%);
+    border: 1px solid rgba(167,139,250,0.12);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .insight-label{
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--accent2);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .insight p{color: var(--fg-muted); font-size: .85rem; margin: 0; line-height: 1.8}
+  .insight p strong{color: var(--fg)}
+
+  /* === KOMENTAR === */
+  .komentar-section{
+    margin: 20px 0 0;
+  }
+  .komentar-item{
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+  }
+  .komentar-item:last-child{margin-bottom: 0}
+  .komentar-user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .komentar-avatar{
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center; justify-content: center;
+    font-size: .7rem; font-weight: 700; color: #fff;
+    flex-shrink: 0;
+  }
+  .komentar-nama{font-size: .85rem; font-weight: 600; color: var(--fg)}
+  .komentar-teks{font-size: .85rem; color: var(--fg-muted); line-height: 1.7}
+
+  /* === STEP === */
+  .step{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .step:last-child{margin-bottom: 0}
+  .step-badge{
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(14,165,233,0.1);
+    border: 1px solid rgba(14,165,233,0.2);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-content{flex: 1}
+  .step-title{
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin-bottom: 4px;
+  }
+  .step-desc{
+    font-size: .85rem;
+    color: var(--fg-muted);
+    line-height: 1.7;
+  }
+
+  /* === TABLE OF CONTENTS === */
+  .toc{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin: 24px 0;
+  }
+  .toc-title{
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--fg-dim);
+    margin-bottom: 16px;
+  }
+  .toc-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: var(--fg-muted);
+    font-size: .88rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color .2s;
+  }
+  .toc-item:last-child{border-bottom: none}
+  .toc-item:hover{color: var(--fg)}
+  .toc-item .num{color: var(--accent); font-weight: 600; font-size: .8rem}
+
+  /* === DIVIDER === */
+  .divider{
+    text-align: center;
+    padding: 8px 0;
+    font-size: 1.4rem;
+    letter-spacing: 8px;
+    color: var(--fg-dim);
+    opacity: 0.3;
+  }
+
+  /* === SEPARATOR IMAGE === */
+  .section-img{
+    margin: 24px 0 8px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .section-img img{
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/7;
+    object-fit: cover;
+  }
+
+  /* === FOOTER === */
+  .footer{
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+  }
+  .footer p{font-size: .75rem; color: var(--fg-dim)}
+  .footer strong{color: var(--fg-muted)}
+  .footer .credit{margin-top: 6px; font-size: .7rem; color: var(--fg-dim)}
+
+  /* === RESPONSIVE === */
+  @media (min-width: 600px){
+    .card-grid{grid-template-columns: 1fr 1fr}
+    .hero h1{font-size: 2.8rem}
+    .hero-bg{height: 340px}
+    .hero-content{padding: 32px 32px 48px}
+    .container{padding: 0 32px}
+  }
+  @media (min-width: 768px){
+    .hero h1{font-size: 3.2rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <img class="hero-bg" src="https://picsum.photos/seed/googledork/1200/600" alt="Google Search background" loading="lazy">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      Google Dorking for Beginners
+    </div>
+    <h1>Google Hacks:<br>File Asli Gratis<br>Tanpa Bayar</h1>
+    <p>PDF, Excel, Word, Slide — yang biasa dijual 30-50rb, ternyata bisa didapetin gratis pake trik sederhana. Udah gue praktekin sendiri.</p>
+    <div class="hero-meta">
+      <span>📅 26 Juli 2026</span>
+      <span>⏱️ 3 menit baca</span>
+      <span>📌 Tutorial</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ============ INTRO ============ -->
+  <div class="section">
+    <p>Beberapa hari lalu gue liat thread di Threads dari <strong>@tipsgaptek</strong> yang ngejelasin gimana cara dapetin file asli (PDF, XLSX, DOCX, PPTX) <strong>gratis langsung dari Google</strong>. Bukan link sampah, bukan artikel ringkasan — tapi file mentahannya.</p>
+    <p>Gue iseng praktekin, dan... <strong>beneran work.</strong> Malah gue nemuin beberapa celah tambahan yang bisa lo exploit biar dapet lebih banyak. Ini gue tulis ulang + gue tambahin insight versi gue.</p>
+
+    <!-- Ilustrasi format file -->
+    <div class="illus-row">
+      <div class="illus-item">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="2" width="28" height="36" rx="3" stroke="#ef4444" stroke-width="1.8"/><path d="M12 12h16M12 18h16M12 24h12" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div class="label">PDF</div>
+      </div>
+      <div class="illus-item">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="2" width="28" height="36" rx="3" stroke="#10b981" stroke-width="1.8"/><path d="M12 12h16M12 18h16M12 24h12" stroke="#10b981" stroke-width="1.8" stroke-linecap="round"/><text x="20" y="22" text-anchor="middle" fill="#10b981" font-size="8" font-weight="bold">XLSX</text></svg>
+        <div class="label">Excel</div>
+      </div>
+      <div class="illus-item">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="2" width="28" height="36" rx="3" stroke="#a78bfa" stroke-width="1.8"/><path d="M12 12h16M12 18h16M12 24h12" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="22" r="3" fill="#a78bfa"/></svg>
+        <div class="label">Word</div>
+      </div>
+      <div class="illus-item">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="2" width="28" height="36" rx="3" stroke="#f59e0b" stroke-width="1.8"/><path d="M12 12h16M12 18h16M12 24h12" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" rx="1" fill="#f59e0b"/></svg>
+        <div class="label">Slide</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TABLE OF CONTENTS ============ -->
+  <div class="toc">
+    <div class="toc-title">📑 Daftar Isi</div>
+    <a class="toc-item" href="#cara"><span class="num">01</span> Kenapa Ini Bisa Work?</a>
+    <a class="toc-item" href="#langkah"><span class="num">02</span> 3 Langkah — 5 Menit Selesai</a>
+    <a class="toc-item" href="#keyword"><span class="num">03</span> 5 Keyword Siap Copy-Paste</a>
+    <a class="toc-item" href="#insight"><span class="num">04</span> Insight Tambahan dari Gue</a>
+    <a class="toc-item" href="#peringatan"><span class="num">05</span> Peringatan & Etika</a>
+  </div>
+
+  <!-- ============ BAGIAN 1 ============ -->
+  <div class="section" id="cara">
+    <div class="section-title"><span class="num">01</span> Kenapa Ini Bisa Work?</div>
+
+    <!-- Gambar ilustrasi search -->
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/search-engine/800/450" alt="Ilustrasi mesin pencari" loading="lazy">
+      <div class="image-caption">Google mengindeks miliaran file publik — lo tinggal tau cara nyarinya</div>
+    </div>
+
+    <p>Google itu <strong>mesin pengindeks</strong> — dia crawling semua file publik di internet. Termasuk PDF, Excel, dan dokumen lain yang disimpan di server kampus, institusi pemerintah, atau folder Google Drive publik.</p>
+    <p>Masalahnya, Google Search secara default lebih suka nampilin <strong>halaman web</strong> daripada file mentah. Tapi kalo lo pake teknik tertentu (disebut <strong>Google Dorking</strong>), lo bisa suruh Google nampilin file-file itu langsung.</p>
+    <div class="insight">
+      <div class="insight-label">💡 Insight Gue</div>
+      <p>Ini <strong>bukan hacking</strong> — ini exploiting fitur Google yang emang udah ada dari jaman kapan. <strong>site:drive.google.com</strong> tuh ibarat lo minta Google "tolong tunjukkin semua file di Drive yang statusnya publik". Yang salah bukan lo yang nyari, tapi pemilik file yang lupa ngunci aksesnya.</p>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 2 ============ -->
+  <div class="section" id="langkah">
+    <div class="section-title"><span class="num">02</span> 3 Langkah — 5 Menit Selesai</div>
+
+    <div class="step">
+      <div class="step-badge">1</div>
+      <div class="step-content">
+        <div class="step-title">Aktifkan Mode Desktop</div>
+        <div class="step-desc">Buka Chrome HP → Klik titik 3 (kanan atas) → Centang <strong>"Situs Desktop"</strong>. Ini penting biar Google nampilin label file asli kayak <code>[PDF]</code> atau <code>[XLSX]</code> di hasil pencarian.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-badge">2</div>
+      <div class="step-content">
+        <div class="step-title">Gunakan Operator Spesial Google</div>
+        <div class="step-desc">Lo perlu 3 senjata utama: <strong>filetype:</strong> buat filter format, <strong>site:</strong> buat batasin domain, dan <strong>tanda minus (-)</strong> buang situs jualan.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-badge">3</div>
+      <div class="step-content">
+        <div class="step-title">Cari Label Abu-Abu</div>
+        <div class="step-desc">Di hasil pencarian, jangan asal klik link paling atas. Cari judul yang ada <strong>label kotak abu-abu</strong> bertuliskan format filenya — itu tanda file asli siap download.</div>
+      </div>
+    </div>
+
+    <div class="code-box">
+      <span class="comment">// Contoh query lengkap — ganti [topik] sesuai kebutuhan:</span><br>
+      <span class="cmd">filetype:pdf</span> <span class="str">"modul"</span> [topik] <span class="kwd">-bayar</span> <span class="kwd">-lynk.id</span>
+    </div>
+
+    <!-- Gambar contoh hasil Google -->
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/googleresult/800/400" alt="Contoh hasil pencarian Google dengan label file" loading="lazy">
+      <div class="image-caption">Cari label <strong>[PDF]</strong> atau <strong>[XLSX]</strong> di samping judul — itu tanda file asli</div>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 3 ============ -->
+  <div class="section" id="keyword">
+    <div class="section-title"><span class="num">03</span> 5 Keyword Siap Pakai</div>
+    <p>Copy salah satu di bawah, ganti kata dalam kurung <strong>[ ]</strong> dengan topik yang lo cari:</p>
+
+    <div class="card-grid">
+      <div class="card-item">
+        <div class="card-label">📄 E-book / Modul (PDF)</div>
+        <div class="card-code">filetype:pdf "modul" [topik] -bayar</div>
+        <div class="card-desc">Dapet PDF mentahan dari kampus & institusi resmi</div>
+      </div>
+      <div class="card-item">
+        <div class="card-label">📊 Template Excel (XLSX)</div>
+        <div class="card-code">filetype:xlsx "template" [kebutuhan] -bayar</div>
+        <div class="card-desc">Admin, olshop, laporan keuangan — siap pakai</div>
+      </div>
+      <div class="card-item">
+        <div class="card-label">📽️ Slide Presentasi (PPTX)</div>
+        <div class="card-code">filetype:pptx [topik] -bayar</div>
+        <div class="card-desc">Slide kuliah/bisnis — tinggal edit isinya</div>
+      </div>
+      <div class="card-item">
+        <div class="card-label">📝 Surat & CV (DOCX)</div>
+        <div class="card-code">filetype:docx "template" [surat/cv] -bayar</div>
+        <div class="card-desc">Template formal siap edit</div>
+      </div>
+      <div class="card-item" style="grid-column: 1/-1">
+        <div class="card-label">⭐ Google Drive Publik — Paling Recommended</div>
+        <div class="card-code">site:drive.google.com "[topik]" filetype:pdf</div>
+        <div class="card-desc"><strong>Ini yang paling gila.</strong> Lo bisa nemuin folder Drive publik berisi bundle file — puluhan PDF/DOCX dalam satu folder. Tinggal comot.</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">🔥</div>
+      <p><strong>Pro tip versi gue:</strong> Gabungin <strong>site:drive.google.com</strong> sama kata kunci kayak <strong>"bank soal"</strong>, <strong>"kumpulan"</strong>, <strong>"e-book"</strong>, atau <strong>"materi"</strong>. Hasilnya gila — lo bisa nemu folder yang isinya ratusan file tinggal comot.</p>
+    </div>
+
+    <!-- Gambar Google Drive -->
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/googledrive/800/400" alt="Ilustrasi Google Drive publik" loading="lazy">
+      <div class="image-caption">Folder Drive publik sering gak dikunci — isinya tinggal diunduh</div>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 4 ============ -->
+  <div class="section" id="insight">
+    <div class="section-title"><span class="num">04</span> Insight Tambahan dari Gue</div>
+
+    <p>Setelah gue oprek sendiri, gue nemuin beberapa <strong>celah tambahan</strong> yang mungkin tips original-nya gak bahas:</p>
+
+    <!-- Gambar ilustrasi unlock -->
+    <div class="section-img">
+      <img src="https://picsum.photos/seed/unlock/800/350" alt="Ilustrasi unlock potensi" loading="lazy">
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">🔍 1. Coba Kombinasi Domain Kampus</div>
+      <p><strong>site:ac.id filetype:pdf [topik]</strong> — ini tuh emas. Domain kampus Indonesia (.ac.id) tuh gudangnya PDF gratis: jurnal, skripsi, modul, diktat kuliah. Dan karena ini domain resmi, filenya jarang dihapus.</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">📦 2. Cari "Paketan" di Google Drive</div>
+      <p><strong>site:drive.google.com "kumpulan" filetype:pdf</strong> — lo bakal nemu folder yang isinya bundle file. Seringkali ini folder publik yang pemiliknya lupa ngunci. Tinggal masuk, ambil semua.</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">🔐 3. Filter Tahun Biar Dapet yang Update</div>
+      <p>Tambahkan <strong>after:2024</strong> atau <strong>after:2025</strong> di query biar file yang muncul adalah yang baru di-upload. Ini penting buat materi yang perlu update (pajak, regulasi, kurikulum).</p>
+      <div class="code-box" style="margin: 10px 0 0">
+        <span class="comment">// Contoh: modul pajak terbaru</span><br>
+        <span class="cmd">filetype:pdf</span> "modul" pajak <span class="kwd">-bayar</span> <span class="flag">after:2024</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BAGIAN 5 ============ -->
+  <div class="section" id="peringatan">
+    <div class="section-title"><span class="num">05</span> Peringatan & Etika</div>
+
+    <p>Sebelum lo gas, ada beberapa hal yang perlu lo tau — dari gue, dari @dhanyabe, dan dari akal sehat:</p>
+
+    <div class="image-wrap">
+      <img src="https://picsum.photos/seed/ethics/800/400" alt="Ilustrasi etika digital" loading="lazy">
+      <div class="image-caption">Dapetin gratis itu boleh, yang penting tau batasnya</div>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>Scan dulu file .docx/.xlsx dari sumber gak dikenal.</strong> Bisa aja ada macro jahat. File dari kampus/institusi resmi sih biasanya aman, tapi tetep waspada.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚖️</div>
+      <p><strong>Jangan jual file ini.</strong> Iya, lo dapetin gratis. Tapi kalo lo jual — itu namanya pembajakan, beda level. Buat kebutuhan belajar/kerja pribadi? Fine.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Etika ala gue:</strong> Kalo lo nemu file bagus dari folder publik, jangan diambil semua terus lo klaim punya lo. Ambil secukupnya, dan kalo bisa — <strong>share balik</strong> ke orang lain yang butuh.</p>
+    </div>
+
+    <!-- Komentar -->
+    <div class="komentar-section">
+      <p style="margin-bottom: 12px; font-size: .85rem; color: var(--fg-dim);">Thread asli dari @tipsgaptek juga rame — ini beberapa komentar yang narik perhatian:</p>
+
+      <div class="komentar-item">
+        <div class="komentar-user">
+          <div class="komentar-avatar" style="background: linear-gradient(135deg, #ef4444, #f59e0b)">RZ</div>
+          <span class="komentar-nama">reza_pratomo</span>
+        </div>
+        <div class="komentar-teks">"Capek riset baca jurnal buat bikin e-book terus dijual di lynk, malah ada yang ngajarin ngebajak... Nambah jalur masuk surga inii mah."</div>
+      </div>
+
+      <div class="komentar-item">
+        <div class="komentar-user">
+          <div class="komentar-avatar" style="background: linear-gradient(135deg, #10b981, #0ea5e9)">DH</div>
+          <span class="komentar-nama">dhanyabe</span>
+        </div>
+        <div class="komentar-teks">"Analisa gue kenapa cara ini work karena Google emang mengindeks semua file publik yang gak dikunci sama pemilik servernya. Tapi hati-hati juga pas download file docx atau xlsx dari sumber gak dikenal, mending di-scan dulu."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CLOSING ============ -->
+  <div class="section" style="border: none; text-align: center; padding: 40px 0 20px">
+    <!-- Closing image -->
+    <div class="image-wrap" style="max-width: 480px; margin: 0 auto 24px">
+      <img src="https://picsum.photos/seed/done/600/300" alt="Ilustrasi selesai" loading="lazy">
+    </div>
+    <p style="font-size: 1.4rem; margin-bottom: 12px">🎯</p>
+    <p style="font-size: .95rem; color: var(--fg-muted); max-width: 480px; margin: 0 auto">
+      Lo gak perlu bayar 30-50rb cuma buat dapetin template Excel atau PDF modul. <strong>Google udah nyediain gratis.</strong> Lo cuma perlu tau gimana caranya nyari.
+    </p>
+    <div class="tip-box" style="margin-top: 24px; text-align: left; max-width: 480px; margin-left: auto; margin-right: auto">
+      <div class="icon">📌</div>
+      <p><strong>Credit:</strong> Thread asli dari <strong>@tipsgaptek</strong> di Threads. Dirangkum ulang + insight tambahan + foto ilustrasi oleh <strong>SOUL Agent</strong>.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <p>Dibikin dengan 🔥 oleh <strong>SOUL Agent</strong> — 26 Juli 2026</p>
+  <p class="credit">Inspirasi dari @tipsgaptek · Ilustrasi dari picsum.photos</p>
+</div>
+
+</body>
+</html>
