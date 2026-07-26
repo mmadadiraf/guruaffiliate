@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/artikel",
-      "destination": "/api/artikel.mjs"
+      "destination": "/api/artikel.js"
     },
     {
       "source": "/api/artikel/:slug",
-      "destination": "/api/artikel.mjs"
+      "destination": "/api/artikel.js"
     },
     {
       "source": "/artikel/:slug",
